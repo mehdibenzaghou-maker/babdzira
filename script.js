@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Images par défaut
     const imgPlaceholders = document.querySelectorAll('[data-src-placeholder]');
     imgPlaceholders.forEach(img => {
-        img.src = "https://placehold.co/600x400/EEDDCC/5D4037?text=Bab+Dzira";
+        img.src = "https://placehold.co/600x400/1E3A5F/C9A03D?text=Bab+Dzira";
     });
 
     // Gestion des boutons 3D
