@@ -8,13 +8,19 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Images par défaut
-    const imgPlaceholders = document.querySelectorAll('[data-src-placeholder]');
-    imgPlaceholders.forEach(img => {
-        img.src = "https://placehold.co/600x400/1E3A5F/C9A03D?text=Bab+Dzira";
+    // Chargement des images pour les sections non-3D
+    const images = document.querySelectorAll('.dish-img[data-src]');
+    images.forEach(img => {
+        const url = img.getAttribute('data-src');
+        if (url && url !== '') {
+            img.src = url;
+        } else {
+            // Image par défaut si pas d'URL
+            img.src = "https://placehold.co/600x400/D4A259/FFFFFF?text=Bab+Dzira";
+        }
     });
 
-    // Gestion des boutons 3D
+    // Gestion des boutons 3D (uniquement pour les desserts)
     const buttons3d = document.querySelectorAll('.btn-3d');
     
     buttons3d.forEach(button => {
