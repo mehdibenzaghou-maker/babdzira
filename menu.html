@@ -1,1 +1,184 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Menu | Bab Dzira</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="babdzira.png" alt="Bab Dzira Logo" id="logo-placeholder">
+                <span>Bab Dzira</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="menu.html" class="active">Menu</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
 
+    <main>
+        <section class="menu-header">
+            <h1>Notre Menu</h1>
+            <p>Découvrez nos douceurs préparées avec passion</p>
+        </section>
+
+        <!-- ========== DESSERTS : CRÊPES (avec modèle 3D) ========== -->
+        <section class="menu-category">
+            <h2>🥞 Crêpes</h2>
+            <div class="menu-grid">
+                <div class="menu-item dessert-3d">
+                    <model-viewer src="models/crepe-chocolat.glb" alt="Crêpe Chocolat" auto-rotate camera-controls disable-zoom ar-status="not-supporting" class="model-3d"></model-viewer>
+                    <div class="menu-info"><h3>Crêpe Chocolat</h3><p>Crêpe au chocolat fondu.</p><span class="price">600 DA</span></div>
+                </div>
+                <div class="menu-item dessert-3d">
+                    <model-viewer src="models/crepe-bueno.glb" alt="Crêpe Bueno" auto-rotate camera-controls disable-zoom class="model-3d"></model-viewer>
+                    <div class="menu-info"><h3>Crêpe Bueno</h3><p>Crêpe fourrée au chocolat Bueno.</p><span class="price">600 DA</span></div>
+                </div>
+                <div class="menu-item dessert-3d">
+                    <model-viewer src="models/crepe-pistache.glb" alt="Crêpe Pistache" auto-rotate camera-controls disable-zoom class="model-3d"></model-viewer>
+                    <div class="menu-info"><h3>Crêpe Pistache</h3><p>Crêpe à la crème de pistache.</p><span class="price">600 DA</span></div>
+                </div>
+                <div class="menu-item dessert-3d">
+                    <model-viewer src="models/crepe-caramel.glb" alt="Crêpe Caramel" auto-rotate camera-controls disable-zoom class="model-3d"></model-viewer>
+                    <div class="menu-info"><h3>Crêpe Caramel</h3><p>Crêpe au caramel onctueux.</p><span class="price">600 DA</span></div>
+                </div>
+                <div class="menu-item dessert-3d">
+                    <model-viewer src="models/crepe-nature.glb" alt="Crêpe Nature" auto-rotate camera-controls disable-zoom class="model-3d"></model-viewer>
+                    <div class="menu-info"><h3>Crêpe Nature</h3><p>Crêpe nature classique.</p><span class="price">600 DA</span></div>
+                </div>
+                <div class="menu-item dessert-3d">
+                    <model-viewer src="models/crepe-choco-banane.glb" alt="Crêpe Chocolat Banane" auto-rotate camera-controls disable-zoom class="model-3d"></model-viewer>
+                    <div class="menu-info"><h3>Crêpe Chocolat Banane</h3><p>Crêpe chocolat et rondelles de banane.</p><span class="price">700 DA</span></div>
+                </div>
+                <div class="menu-item dessert-3d">
+                    <model-viewer src="models/crepe-2fruits.glb" alt="Crêpe Chocolat 2 Fruits" auto-rotate camera-controls disable-zoom class="model-3d"></model-viewer>
+                    <div class="menu-info"><h3>Crêpe Chocolat 2 Fruits</h3><p>Crêpe chocolat et deux fruits au choix.</p><span class="price">800 DA</span></div>
+                </div>
+                <div class="menu-item dessert-3d">
+                    <model-viewer src="models/crepe-3fruits.glb" alt="Crêpe Chocolat 3 Fruits" auto-rotate camera-controls disable-zoom class="model-3d"></model-viewer>
+                    <div class="menu-info"><h3>Crêpe Chocolat 3 Fruits</h3><p>Crêpe chocolat et trois fruits au choix.</p><span class="price">900 DA</span></div>
+                </div>
+                <div class="menu-item dessert-3d">
+                    <model-viewer src="models/crepe-nutella-croustillante.glb" alt="Crêpe Nutella Croustillante" auto-rotate camera-controls disable-zoom class="model-3d"></model-viewer>
+                    <div class="menu-info"><h3>Crêpe Nutella Croustillante</h3><p>Crêpe au Nutella et éclats croustillants.</p><span class="price">700 DA</span></div>
+                </div>
+                <div class="menu-item dessert-3d">
+                    <model-viewer src="models/crepe-dzira.glb" alt="Crêpe Dzira" auto-rotate camera-controls disable-zoom class="model-3d"></model-viewer>
+                    <div class="menu-info"><h3>Crêpe Dzira</h3><p>Nutella, fruits, glace et fruits secs.</p><span class="price">1200 DA</span></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== DESSERTS : GAUFRES ========== -->
+        <section class="menu-category">
+            <h2>🧇 Gaufres</h2>
+            <div class="menu-grid">
+                <div class="menu-item dessert-3d"><model-viewer src="models/gaufre-chocolat.glb" auto-rotate camera-controls disable-zoom class="model-3d"></model-viewer><div class="menu-info"><h3>Gaufre Chocolat</h3><span class="price">700 DA</span></div></div>
+                <div class="menu-item dessert-3d"><model-viewer src="models/gaufre-bueno.glb" auto-rotate camera-controls disable-zoom class="model-3d"></model-viewer><div class="menu-info"><h3>Gaufre Bueno</h3><span class="price">700 DA</span></div></div>
+                <div class="menu-item dessert-3d"><model-viewer src="models/gaufre-pistache.glb" auto-rotate camera-controls disable-zoom class="model-3d"></model-viewer><div class="menu-info"><h3>Gaufre Pistache</h3><span class="price">700 DA</span></div></div>
+                <div class="menu-item dessert-3d"><model-viewer src="models/gaufre-caramel.glb" auto-rotate camera-controls disable-zoom class="model-3d"></model-viewer><div class="menu-info"><h3>Gaufre Caramel</h3><span class="price">700 DA</span></div></div>
+                <div class="menu-item dessert-3d"><model-viewer src="models/gaufre-nature.glb" auto-rotate camera-controls disable-zoom class="model-3d"></model-viewer><div class="menu-info"><h3>Gaufre Nature</h3><span class="price">700 DA</span></div></div>
+                <div class="menu-item dessert-3d"><model-viewer src="models/gaufre-nutella.glb" auto-rotate camera-controls disable-zoom class="model-3d"></model-viewer><div class="menu-info"><h3>Gaufre Nutella</h3><span class="price">900 DA</span></div></div>
+                <div class="menu-item dessert-3d"><model-viewer src="models/gaufre-dzira.glb" auto-rotate camera-controls disable-zoom class="model-3d"></model-viewer><div class="menu-info"><h3>Gaufre Dzira</h3><p>Nutella, fruits, glace et fruits secs.</p><span class="price">1200 DA</span></div></div>
+            </div>
+        </section>
+
+        <!-- ========== DESSERTS : PANCAKES ========== -->
+        <section class="menu-category">
+            <h2>🥞 Pancakes</h2>
+            <div class="menu-grid">
+                <div class="menu-item dessert-3d"><model-viewer src="models/pancake-chocolat.glb" auto-rotate camera-controls disable-zoom class="model-3d"></model-viewer><div class="menu-info"><h3>Pancake Chocolat</h3><span class="price">600 DA</span></div></div>
+                <div class="menu-item dessert-3d"><model-viewer src="models/pancake-bueno.glb" auto-rotate camera-controls disable-zoom class="model-3d"></model-viewer><div class="menu-info"><h3>Pancake Bueno</h3><span class="price">600 DA</span></div></div>
+                <div class="menu-item dessert-3d"><model-viewer src="models/pancake-pistache.glb" auto-rotate camera-controls disable-zoom class="model-3d"></model-viewer><div class="menu-info"><h3>Pancake Pistache</h3><span class="price">600 DA</span></div></div>
+                <div class="menu-item dessert-3d"><model-viewer src="models/pancake-caramel.glb" auto-rotate camera-controls disable-zoom class="model-3d"></model-viewer><div class="menu-info"><h3>Pancake Caramel</h3><span class="price">600 DA</span></div></div>
+                <div class="menu-item dessert-3d"><model-viewer src="models/pancake-nature.glb" auto-rotate camera-controls disable-zoom class="model-3d"></model-viewer><div class="menu-info"><h3>Pancake Nature</h3><span class="price">600 DA</span></div></div>
+                <div class="menu-item dessert-3d"><model-viewer src="models/pancake-choco-banane.glb" auto-rotate camera-controls disable-zoom class="model-3d"></model-viewer><div class="menu-info"><h3>Pancake Chocolat Banane</h3><span class="price">700 DA</span></div></div>
+                <div class="menu-item dessert-3d"><model-viewer src="models/pancake-2fruits.glb" auto-rotate camera-controls disable-zoom class="model-3d"></model-viewer><div class="menu-info"><h3>Pancake Chocolat 2 Fruits</h3><span class="price">800 DA</span></div></div>
+                <div class="menu-item dessert-3d"><model-viewer src="models/pancake-3fruits.glb" auto-rotate camera-controls disable-zoom class="model-3d"></model-viewer><div class="menu-info"><h3>Pancake Chocolat 3 Fruits</h3><span class="price">900 DA</span></div></div>
+                <div class="menu-item dessert-3d"><model-viewer src="models/pancake-nutella.glb" auto-rotate camera-controls disable-zoom class="model-3d"></model-viewer><div class="menu-info"><h3>Pancake Nutella</h3><span class="price">700 DA</span></div></div>
+                <div class="menu-item dessert-3d"><model-viewer src="models/pancake-erable.glb" auto-rotate camera-controls disable-zoom class="model-3d"></model-viewer><div class="menu-info"><h3>Pancake Sirop d'érable</h3><span class="price">1000 DA</span></div></div>
+                <div class="menu-item dessert-3d"><model-viewer src="models/pancake-dzira.glb" auto-rotate camera-controls disable-zoom class="model-3d"></model-viewer><div class="menu-info"><h3>Pancake Dzira</h3><p>Nutella, fruits, glace et fruits secs.</p><span class="price">1200 DA</span></div></div>
+            </div>
+        </section>
+
+        <!-- ========== AUTRES DESSERTS : PÂTISSERIES, VIENNOISERIES, COUPES GLACÉES... ========== -->
+        <section class="menu-category">
+            <h2>🍰 Pâtisseries & Viennoiseries</h2>
+            <div class="menu-grid">
+                <div class="menu-item dessert-3d"><model-viewer src="models/fondant-chocolat.glb" auto-rotate camera-controls disable-zoom class="model-3d"></model-viewer><div class="menu-info"><h3>Fondant chocolat</h3><span class="price">700 DA</span></div></div>
+                <div class="menu-item dessert-3d"><model-viewer src="models/tarte-choco-banane.glb" auto-rotate camera-controls disable-zoom class="model-3d"></model-viewer><div class="menu-info"><h3>Tarte Chocolat Banane</h3><span class="price">600 DA</span></div></div>
+                <div class="menu-item dessert-3d"><model-viewer src="models/red-velvet.glb" auto-rotate camera-controls disable-zoom class="model-3d"></model-viewer><div class="menu-info"><h3>Red Velvet</h3><span class="price">550 DA</span></div></div>
+                <div class="menu-item dessert-3d"><model-viewer src="models/cheesecake.glb" auto-rotate camera-controls disable-zoom class="model-3d"></model-viewer><div class="menu-info"><h3>Cheesecake</h3><span class="price">500 DA</span></div></div>
+                <div class="menu-item dessert-3d"><model-viewer src="models/cheesecake-lotus.glb" auto-rotate camera-controls disable-zoom class="model-3d"></model-viewer><div class="menu-info"><h3>Cheesecake Lotus</h3><span class="price">550 DA</span></div></div>
+                <div class="menu-item dessert-3d"><model-viewer src="models/tiramisu.glb" auto-rotate camera-controls disable-zoom class="model-3d"></model-viewer><div class="menu-info"><h3>Tiramisu</h3><span class="price">600 DA</span></div></div>
+                <div class="menu-item dessert-3d"><model-viewer src="models/croissant-beurre.glb" auto-rotate camera-controls disable-zoom class="model-3d"></model-viewer><div class="menu-info"><h3>Croissant au Beurre</h3><span class="price">150 DA</span></div></div>
+                <div class="menu-item dessert-3d"><model-viewer src="models/kounafa.glb" auto-rotate camera-controls disable-zoom class="model-3d"></model-viewer><div class="menu-info"><h3>Kounafa</h3><span class="price">500 DA</span></div></div>
+            </div>
+        </section>
+
+        <!-- ========== BOISSONS CHAUDES (images normales) ========== -->
+        <section class="menu-category">
+            <h2>☕ Boissons chaudes</h2>
+            <div class="menu-grid">
+                <div class="menu-item"><img src="" alt="Espresso" class="dish-img" data-src-placeholder><div class="menu-info"><h3>Espresso</h3><span class="price">300 DA</span></div></div>
+                <div class="menu-item"><img src="" alt="Cappuccino" class="dish-img" data-src-placeholder><div class="menu-info"><h3>Cappuccino classique</h3><span class="price">400 DA</span></div></div>
+                <div class="menu-item"><img src="" alt="Matcha Latte" class="dish-img" data-src-placeholder><div class="menu-info"><h3>Matcha Latte</h3><span class="price">550 DA</span></div></div>
+                <div class="menu-item"><img src="" alt="Chocolat Chaud" class="dish-img" data-src-placeholder><div class="menu-info"><h3>Chocolat Chaud 70%</h3><span class="price">500 DA</span></div></div>
+                <div class="menu-item"><img src="" alt="Thé maison" class="dish-img" data-src-placeholder><div class="menu-info"><h3>Thé maison infusion cacahuète</h3><span class="price">300 DA</span></div></div>
+            </div>
+            <p style="margin-top:1rem; font-size:0.9rem; text-align:center;">+25 autres boissons chaudes (Doppio, Latte, Mocha, Dalgona, Spanish Coffee, etc.)</p>
+        </section>
+
+        <!-- ========== BOISSONS FRAÎCHES & GLACÉES ========== -->
+        <section class="menu-category">
+            <h2>🥤 Boissons fraîches & glacées</h2>
+            <div class="menu-grid">
+                <div class="menu-item"><img src="" class="dish-img" data-src-placeholder><div class="menu-info"><h3>Jus de fruit de saison</h3><span class="price">450 DA</span></div></div>
+                <div class="menu-item"><img src="" class="dish-img" data-src-placeholder><div class="menu-info"><h3>Iced Coffee</h3><span class="price">400 DA</span></div></div>
+                <div class="menu-item"><img src="" class="dish-img" data-src-placeholder><div class="menu-info"><h3>Iced Matcha Latte Mangue</h3><span class="price">600 DA</span></div></div>
+            </div>
+        </section>
+
+        <!-- ========== COCKTAILS & CHILL ========== -->
+        <section class="menu-category">
+            <h2>🍹 Cocktails & Chill</h2>
+            <div class="menu-grid">
+                <div class="menu-item"><img src="" class="dish-img" data-src-placeholder><div class="menu-info"><h3>Blue Hawaii</h3><p>Curaçao bleu, citron, jus d'Ananas</p><span class="price">600 DA</span></div></div>
+                <div class="menu-item"><img src="" class="dish-img" data-src-placeholder><div class="menu-info"><h3>Mojito classique</h3><span class="price">500 DA</span></div></div>
+                <div class="menu-item"><img src="" class="dish-img" data-src-placeholder><div class="menu-info"><h3>Cocktail Dzira</h3><p>Degla, miel, zbib, lait entier</p><span class="price">900 DA</span></div></div>
+            </div>
+        </section>
+
+        <!-- ========== BUBBLE TEA & MILKSHAKES ========== -->
+        <section class="menu-category">
+            <h2>🧋 Bubble Tea & Milkshakes</h2>
+            <div class="menu-grid">
+                <div class="menu-item"><img src="" class="dish-img" data-src-placeholder><div class="menu-info"><h3>Bubble Tea Cerise</h3><span class="price">500 DA</span></div></div>
+                <div class="menu-item"><img src="" class="dish-img" data-src-placeholder><div class="menu-info"><h3>Milkshake Chocolat</h3><span class="price">700 DA</span></div></div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section"><h4>Bab Dzira</h4><p>Café · Pâtisserie · Cocktails</p></div>
+            <div class="footer-section"><h4>Horaires</h4><p>Tous les jours : 10h00 – 23h00</p></div>
+            <div class="footer-section"><h4>Contact</h4><p>📞 +213 XXX XX XX XX</p><p>✉️ contact@babdzira.dz</p></div>
+        </div>
+        <div class="footer-bottom"><p>&copy; 2026 Bab Dzira</p></div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
