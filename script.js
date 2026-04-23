@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
 
-    /* ── Header scroll ─────────────────────────────────── */
+    /* Header scroll */
     var header = document.querySelector('header');
     if (header) {
         window.addEventListener('scroll', function () {
@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }, { passive: true });
     }
 
-    /* ── Hamburger ─────────────────────────────────────── */
+    /* Hamburger */
     var burger = document.querySelector('.hamburger');
     var navLinks = document.querySelector('.nav-links');
     if (burger && navLinks) {
@@ -17,11 +17,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    /* ── Reveal — safe pattern ─────────────────────────────
-       1. Add .pre to hide elements (opacity:0)
-       2. Observer adds .in to show them
-       3. If anything fails, .pre elements are shown after 400ms
-    ──────────────────────────────────────────────────────── */
+    /* Reveal */
     var revealEls = Array.prototype.slice.call(document.querySelectorAll('.reveal'));
 
     function showEl(el) {
@@ -43,7 +39,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
         revealEls.forEach(function (el) { obs.observe(el); });
 
-        /* Safety fallback — show anything already visible */
         setTimeout(function () {
             document.querySelectorAll('.reveal.pre').forEach(function (el) {
                 if (el.getBoundingClientRect().top < window.innerHeight + 50) {
@@ -53,25 +48,24 @@ document.addEventListener('DOMContentLoaded', function () {
         }, 400);
     }
 
-    /* ── Ripple ────────────────────────────────────────── */
-    document.querySelectorAll('.btn-gold').forEach(function (btn) {
+    /* Ripple effect */
+    document.querySelectorAll('.btn-gold, .btn-3d-view').forEach(function (btn) {
         btn.addEventListener('click', function (e) {
             var r = document.createElement('span');
             var rect = this.getBoundingClientRect();
             r.classList.add('ripple-el');
             r.style.left = (e.clientX - rect.left) + 'px';
-            r.style.top  = (e.clientY - rect.top)  + 'px';
+            r.style.top = (e.clientY - rect.top) + 'px';
             this.appendChild(r);
             setTimeout(function () { r.remove(); }, 650);
         });
     });
 
-    /* ── Category tabs ─────────────────────────────────── */
-    var tabs     = Array.prototype.slice.call(document.querySelectorAll('.cat-tab'));
+    /* Category tabs - scroll to section */
+    var tabs = Array.prototype.slice.call(document.querySelectorAll('.cat-tab'));
     var sections = Array.prototype.slice.call(document.querySelectorAll('.menu-section[id]'));
 
     if (tabs.length && sections.length) {
-        /* Click → scroll to section */
         tabs.forEach(function (tab) {
             tab.addEventListener('click', function () {
                 var target = document.getElementById(tab.dataset.target);
@@ -81,10 +75,10 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         });
 
-        /* Scroll → highlight active tab */
+        /* Highlight active tab on scroll */
         if ('IntersectionObserver' in window) {
-            var navH = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--nav-h')) || 64;
-            var tabH = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--tab-h')) || 66;
+            var navH = 64;
+            var tabH = 66;
 
             var secObs = new IntersectionObserver(function (entries) {
                 entries.forEach(function (e) {
@@ -93,8 +87,6 @@ document.addEventListener('DOMContentLoaded', function () {
                         tabs.forEach(function (t) {
                             t.classList.toggle('active', t.dataset.target === id);
                         });
-                        var active = document.querySelector('.cat-tab[data-target="' + id + '"]');
-                        if (active) active.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
                     }
                 });
             }, {
@@ -105,24 +97,36 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    /* ── Menu card stagger ─────────────────────────────── */
-    if ('IntersectionObserver' in window) {
-        var cardIdx = 0;
-        var cardObs = new IntersectionObserver(function (entries) {
-            entries.forEach(function (e) {
-                if (e.isIntersecting) {
-                    var delay = (cardIdx % 6) * 0.055;
-                    e.target.style.animationDelay = delay + 's';
-                    e.target.style.animation = 'fadeUp 0.5s ease both';
-                    cardObs.unobserve(e.target);
-                    cardIdx++;
-                }
-            });
-        }, { threshold: 0.05 });
-        document.querySelectorAll('.menu-card').forEach(function (c) { cardObs.observe(c); });
-    }
+    /* 3D View buttons - toggle camera controls / fullscreen */
+    var viewBtns = document.querySelectorAll('.btn-3d-view');
+    viewBtns.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+            var viewer = this.parentElement.querySelector('model-viewer');
+            if (viewer) {
+                viewer.cameraControls = true;
+                viewer.autoRotate = false;
+                viewer.style.height = '300px';
+                setTimeout(function() {
+                    viewer.style.height = '140px';
+                    viewer.autoRotate = true;
+                    setTimeout(function() { viewer.cameraControls = false; }, 5000);
+                }, 8000);
+            }
+        });
+    });
 
-    /* ── Contact form feedback ─────────────────────────── */
+    /* Image URL input - update image on change */
+    var imgInputs = document.querySelectorAll('.img-url-input');
+    imgInputs.forEach(function (input) {
+        input.addEventListener('change', function () {
+            var img = this.parentElement.querySelector('.dish-img');
+            if (img && this.value) {
+                img.src = this.value;
+            }
+        });
+    });
+
+    /* Contact form feedback */
     var form = document.querySelector('.contact-form-el');
     if (form) {
         form.addEventListener('submit', function (e) {
