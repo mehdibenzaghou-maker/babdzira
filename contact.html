@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Bab Dzira</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for social icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ══ HEADER ══ -->
+<header>
+    <nav>
+        <a class="logo" href="index.html">
+            <div class="logo-medal">
+                <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="4" y="28" width="32" height="4" rx="1"/>
+                    <path d="M8 28 V18 Q8 8 20 8 Q32 8 32 18 V28" fill="none" stroke="#C9A84C" stroke-width="2.5" stroke-linejoin="round"/>
+                    <line x1="20" y1="8" x2="20" y2="28" stroke="#C9A84C" stroke-width="1.5"/>
+                    <circle cx="20" cy="6" r="2" fill="#C9A84C"/>
+                </svg>
+            </div>
+            <div class="logo-words">
+                <span class="logo-ar">باب دزيرة</span>
+                <span class="logo-fr">Bab Dzira</span>
+            </div>
+        </a>
+        <ul class="nav-links">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+        <div class="hamburger"><span></span><span></span><span></span></div>
+    </nav>
+</header>
+
+<main>
+
+    <!-- Page title -->
+    <div class="contact-head">
+        <div class="sec-title">
+            <span class="sec-line"></span>
+            <span class="sec-text">Nous Contacter</span>
+            <span class="sec-line"></span>
+        </div>
+        <p class="contact-sub">Réservation · Livraison · Questions</p>
+    </div>
+
+    <!-- ══ ROW 1 : Info + Form ══ -->
+    <div class="contact-grid">
+
+        <!-- ── Informations card ── -->
+        <div class="c-card reveal">
+            <h2>✦ Informations</h2>
+
+            <!-- Address -->
+            <div class="info-row">
+                <i class="fas fa-map-marker-alt"></i>
+                Bd ZIGHOUT Youcef, Alger Centre 16000, Algérie
+            </div>
+
+            <!-- Phone -->
+            <div class="info-row">
+                <i class="fas fa-phone"></i>
+                +213 XXX XX XX XX
+            </div>
+
+            <!-- Email -->
+            <div class="info-row">
+                <i class="fas fa-envelope"></i>
+                <a href="mailto:babdziracoffealger@gmail.com">babdziracoffealger@gmail.com</a>
+            </div>
+
+            <!-- Hours -->
+            <div class="info-row">
+                <i class="fas fa-clock"></i>
+                Tous les jours · 09:00 AM – 01:00 AM
+            </div>
+
+            <!-- Delivery -->
+            <div class="info-row">
+                <i class="fas fa-motorcycle"></i>
+                Yassir · Temtem · Livraison directe
+            </div>
+
+            <!-- ── Social networks ── -->
+            <h2 style="margin-top:1.8rem;">✦ Nos Réseaux</h2>
+            <div class="social-links">
+
+                <a href="mailto:babdziracoffealger@gmail.com"
+                   class="social-link email"
+                   title="Email">
+                    <i class="fas fa-envelope"></i>
+                    Email
+                </a>
+
+                <a href="https://www.instagram.com/babdzira_coffee"
+                   class="social-link instagram"
+                   target="_blank" rel="noopener"
+                   title="Instagram">
+                    <i class="fab fa-instagram"></i>
+                    Instagram
+                </a>
+
+                <a href="https://web.facebook.com/babdziracoffee/"
+                   class="social-link facebook"
+                   target="_blank" rel="noopener"
+                   title="Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                    Facebook
+                </a>
+
+                <a href="https://www.tiktok.com/@babdzira_coffee_icecream"
+                   class="social-link tiktok"
+                   target="_blank" rel="noopener"
+                   title="TikTok">
+                    <i class="fab fa-tiktok"></i>
+                    TikTok
+                </a>
+
+                <a href="https://www.youtube.com/@babdziracoffeerestaurants"
+                   class="social-link youtube"
+                   target="_blank" rel="noopener"
+                   title="YouTube">
+                    <i class="fab fa-youtube"></i>
+                    YouTube
+                </a>
+
+            </div>
+        </div>
+
+        <!-- ── Message form ── -->
+        <div class="c-card reveal">
+            <h2>✦ Envoyez un message</h2>
+            <form class="contact-form-el">
+                <input type="text"  placeholder="Nom complet" required>
+                <input type="email" placeholder="Adresse email" required>
+                <input type="tel"   placeholder="Numéro de téléphone">
+                <textarea rows="5"  placeholder="Votre message..."></textarea>
+                <button type="submit" class="btn-gold"
+                    style="width:100%;border-radius:12px;text-align:center;display:block;">
+                    Envoyer le message
+                </button>
+            </form>
+        </div>
+
+    </div>
+
+    <!-- ══ ROW 2 : Google Maps ══ -->
+    <div class="contact-grid" style="max-width:1100px;margin:0 auto 4rem;padding:0 2rem;">
+        <div class="c-card reveal" style="grid-column:1/-1;">
+            <h2>✦ Notre Localisation</h2>
+            <div class="info-row" style="margin-bottom:.8rem;">
+                <i class="fas fa-map-marker-alt"></i>
+                Juste en face de la, Bd ZIGHOUT Youcef, Alger Centre 16000
+            </div>
+            <div class="map-wrap">
+                <!-- Google Maps embed — code plus Q3G6+3MH Alger -->
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3197.1!2d3.0588!3d36.7372!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x128fb26972f4a4a1%3A0x0!2zQmQgWklHSE9VVCBZT1VDRUYsIEFsZ2VyIENlbnRyZSAxNjAwMA!5e0!3m2!1sfr!2sdz!4v1700000000000!5m2!1sfr!2sdz&q=Q3G6%2B3MH+Alger"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    title="Localisation Bab Dzira">
+                </iframe>
+            </div>
+        </div>
+    </div>
+
+</main>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+    <div class="footer-inner">
+        <div class="footer-col">
+            <h4>Bab Dzira</h4>
+            <p>Café · Pâtisserie · Cocktails</p>
+        </div>
+        <div class="footer-col">
+            <h4>Horaires</h4>
+            <p>Tous les jours : 09:00 AM – 01:00 AM</p>
+        </div>
+        <div class="footer-col">
+            <h4>Suivez-nous</h4>
+            <p>
+                <a href="https://www.instagram.com/babdzira_coffee" target="_blank" rel="noopener"
+                   style="color:rgba(232,201,122,0.5);text-decoration:none;margin-right:1rem;">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://web.facebook.com/babdziracoffee/" target="_blank" rel="noopener"
+                   style="color:rgba(232,201,122,0.5);text-decoration:none;margin-right:1rem;">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://www.tiktok.com/@babdzira_coffee_icecream" target="_blank" rel="noopener"
+                   style="color:rgba(232,201,122,0.5);text-decoration:none;margin-right:1rem;">
+                    <i class="fab fa-tiktok"></i>
+                </a>
+                <a href="https://www.youtube.com/@babdziracoffeerestaurants" target="_blank" rel="noopener"
+                   style="color:rgba(232,201,122,0.5);text-decoration:none;">
+                    <i class="fab fa-youtube"></i>
+                </a>
+            </p>
+            <p style="margin-top:.5rem;">
+                <a href="mailto:babdziracoffealger@gmail.com"
+                   style="color:rgba(232,201,122,0.5);text-decoration:none;font-family:'Raleway',sans-serif;font-size:.75rem;">
+                    <i class="fas fa-envelope"></i> babdziracoffealger@gmail.com
+                </a>
+            </p>
+        </div>
+    </div>
+    <div class="footer-bottom">✦ &copy; 2026 Bab Dzira · Alger Centre, Algérie ✦</div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
