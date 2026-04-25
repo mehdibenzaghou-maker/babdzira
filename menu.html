@@ -37,6 +37,26 @@
             border-color: #C9A84C;
             color: #E8C97A;
         }
+        .item-img {
+            width: 100%;
+            height: 100%;
+            min-height: 180px;
+            object-fit: cover;
+            border-radius: 12px;
+        }
+        .no-media-ph {
+            width: 100%;
+            min-height: 180px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255,255,255,0.04);
+            border-radius: 12px;
+            color: rgba(232,201,122,0.5);
+            font-size: 14px;
+            gap: 8px;
+        }
     </style>
 </head>
 <body>
@@ -430,7 +450,7 @@
         <div class="menu-item-card"><div class="item-media-wrap"><img class="item-img" src="https://pub-a6f3892da45a4251bce1aed37a3c516a.r2.dev/cheesecake%20pistache.jpg" alt="Cheesecake Pistache" loading="lazy"></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Cheesecake Pistache</h3><span class="item-price">600 DA</span></div><p class="item-desc">Cheesecake à la pistache.</p></div></div>
         <div class="menu-item-card"><div class="item-media-wrap"><img class="item-img" src="https://pub-a6f3892da45a4251bce1aed37a3c516a.r2.dev/cheesecake%20oreo.jpg" alt="Cheesecake Oreo" loading="lazy"></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Cheesecake Oreo</h3><span class="item-price">600 DA</span></div><p class="item-desc">Cheesecake aux biscuits Oreo.</p></div></div>
         <div class="menu-item-card"><div class="item-media-wrap"><div class="no-media-ph"><i class="fas fa-birthday-cake"></i></div></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Mousse au chocolat</h3><span class="item-price">500 DA</span></div><p class="item-desc">Mousse au chocolat légère.</p></div></div>
-        <div class="menu-item-card"><div class="item-media-wrap"><div class="no-media-ph"><i class="fas fa-birthday-cake"></i></div></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Nougat glacé</h3><span class="item-price">600 DA</span></div><p class="item-desc">Nougat glacé fait maison.</p></div></div>
+        <div class="menu-item-card"><div class="item-media-wrap"><img class="item-img" src="https://pub-a6f3892da45a4251bce1aed37a3c516a.r2.dev/nouga%20glace%CC%81es.jpg" alt="Nougat glacé" loading="lazy"></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Nougat glacé</h3><span class="item-price">600 DA</span></div><p class="item-desc">Nougat glacé fait maison.</p></div></div>
         <div class="menu-item-card"><div class="item-media-wrap"><img class="item-img" src="https://pub-a6f3892da45a4251bce1aed37a3c516a.r2.dev/tarte%20au%20citron.jpeg" alt="Tarte au citron" loading="lazy"></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Tarte au citron</h3><span class="item-price">500 DA</span></div><p class="item-desc">Tartelette au citron meringuée.</p></div></div>
         <div class="menu-item-card"><div class="item-media-wrap"><img class="item-img" src="https://pub-a6f3892da45a4251bce1aed37a3c516a.r2.dev/flan.jpg" alt="Flan" loading="lazy"></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Flan</h3><span class="item-price">400 DA</span></div><p class="item-desc">Flan pâtissier traditionnel.</p></div></div>
         <div class="menu-item-card"><div class="item-media-wrap"><img class="item-img" src="https://pub-a6f3892da45a4251bce1aed37a3c516a.r2.dev/Trio%20douceurs%20orientales.jpg" alt="Trio douceurs orientales" loading="lazy"></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Trio douceurs orientales</h3><span class="item-price">1000 DA</span></div><p class="item-desc">Assortiment de pâtisseries orientales.</p></div></div>
@@ -443,11 +463,11 @@
 <section class="menu-section" id="viennoiseries">
     <div class="sub-title"><span class="sub-title-line"></span><span class="sub-title-text">🥐 Viennoiseries</span><span class="sub-title-line"></span></div>
     <div class="menu-card-grid">
-        <div class="menu-item-card"><div class="item-media-wrap"><div class="no-media-ph"><i class="fas fa-bread-slice"></i></div></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Croissant Parfumé</h3><span class="item-price">200 DA</span></div><p class="item-desc">Viennoiserie parfumée maison.</p></div></div>
-        <div class="menu-item-card"><div class="item-media-wrap"><div class="no-media-ph"><i class="fas fa-bread-slice"></i></div></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Croissant au Beurre</h3><span class="item-price">150 DA</span></div><p class="item-desc">Croissant classique pur beurre.</p></div></div>
-        <div class="menu-item-card"><div class="item-media-wrap"><div class="no-media-ph"><i class="fas fa-bread-slice"></i></div></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Pain au Chocolat</h3><span class="item-price">150 DA</span></div><p class="item-desc">Pain au chocolat pur beurre.</p></div></div>
-        <div class="menu-item-card"><div class="item-media-wrap"><div class="no-media-ph"><i class="fas fa-bread-slice"></i></div></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Trio Makrout</h3><span class="item-price">500 DA</span></div><p class="item-desc">Trois pièces de Makrout traditionnel.</p></div></div>
-        <div class="menu-item-card"><div class="item-media-wrap"><div class="no-media-ph"><i class="fas fa-bread-slice"></i></div></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Kounafa</h3><span class="item-price">500 DA</span></div></div></div>
+        <div class="menu-item-card"><div class="item-media-wrap"><img class="item-img" src="https://pub-a6f3892da45a4251bce1aed37a3c516a.r2.dev/croissant%20Parfume%CC%81.jpg" alt="Croissant Parfumé" loading="lazy"></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Croissant Parfumé</h3><span class="item-price">200 DA</span></div><p class="item-desc">Viennoiserie parfumée maison.</p></div></div>
+        <div class="menu-item-card"><div class="item-media-wrap"><img class="item-img" src="https://pub-a6f3892da45a4251bce1aed37a3c516a.r2.dev/Croissant%20classique%20pur%20beurre..jpg" alt="Croissant au Beurre" loading="lazy"></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Croissant au Beurre</h3><span class="item-price">150 DA</span></div><p class="item-desc">Croissant classique pur beurre.</p></div></div>
+        <div class="menu-item-card"><div class="item-media-wrap"><img class="item-img" src="https://pub-a6f3892da45a4251bce1aed37a3c516a.r2.dev/pain%20chocolat.jpg" alt="Pain au Chocolat" loading="lazy"></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Pain au Chocolat</h3><span class="item-price">150 DA</span></div><p class="item-desc">Pain au chocolat pur beurre.</p></div></div>
+        <div class="menu-item-card"><div class="item-media-wrap"><img class="item-img" src="https://pub-a6f3892da45a4251bce1aed37a3c516a.r2.dev/Trois%20pie%CC%80ces%20de%20Makrout%20traditionnel.png" alt="Trio Makrout" loading="lazy"></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Trio Makrout</h3><span class="item-price">500 DA</span></div><p class="item-desc">Trois pièces de Makrout traditionnel.</p></div></div>
+        <div class="menu-item-card"><div class="item-media-wrap"><img class="item-img" src="https://pub-a6f3892da45a4251bce1aed37a3c516a.r2.dev/kounafa.png" alt="Kounafa" loading="lazy"></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Kounafa</h3><span class="item-price">500 DA</span></div></div></div>
     </div>
 </section>
 
