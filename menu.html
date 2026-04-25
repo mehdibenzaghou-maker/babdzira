@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu | Bab Dzira</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .ar-btn {
+            position: absolute;
+            bottom: 12px;
+            right: 12px;
+            display: inline-flex;
+            align-items: center;
+            gap: .45rem;
+            background: rgba(11,37,53,0.92);
+            color: #C9A84C;
+            border: 1px solid rgba(201,168,76,0.55);
+            border-radius: 40px;
+            padding: .5rem 1.1rem;
+            font-family: 'Raleway', sans-serif;
+            font-size: .62rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            cursor: pointer;
+            backdrop-filter: blur(8px);
+            transition: all .3s;
+            white-space: nowrap;
+        }
+        .ar-btn:hover {
+            background: rgba(201,168,76,0.2);
+            border-color: #C9A84C;
+            color: #E8C97A;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <nav>
+        <a class="logo" href="index.html">
+            <div class="logo-medal">
+                <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="4" y="28" width="32" height="4" rx="1"/>
+                    <path d="M8 28 V18 Q8 8 20 8 Q32 8 32 18 V28" fill="none" stroke="#C9A84C" stroke-width="2.5" stroke-linejoin="round"/>
+                    <line x1="20" y1="8" x2="20" y2="28" stroke="#C9A84C" stroke-width="1.5"/>
+                    <circle cx="20" cy="6" r="2" fill="#C9A84C"/>
+                </svg>
+            </div>
+            <div class="logo-words">
+                <span class="logo-ar">باب دزيرة</span>
+                <span class="logo-fr">Bab Dzira</span>
+            </div>
+        </a>
+        <ul class="nav-links">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="menu.html" class="active">Menu</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="hamburger"><span></span><span></span><span></span></div>
+    </nav>
+</header>
+
+<div class="info-bar">
+    <div class="info-item"><i class="fas fa-clock"></i> 09:00 AM – 01:00 AM</div>
+    <div class="info-item"><i class="fas fa-map-marker-alt"></i> Alger Centre, Algérie</div>
+</div>
+
+<div class="cat-nav-wrap">
+    <div class="cat-nav">
+        <div class="cat-tab active" data-target="crepes"><i class="fas fa-stroopwafel"></i> Crêpes</div>
+        <div class="cat-tab" data-target="gaufres"><i class="fas fa-th"></i> Gaufres</div>
+        <div class="cat-tab" data-target="pancakes"><i class="fas fa-layer-group"></i> Pancakes</div>
+        <div class="cat-tab" data-target="autres-desserts"><i class="fas fa-apple-alt"></i> Autres Desserts</div>
+        <div class="cat-tab" data-target="boissons-chaudes"><i class="fas fa-mug-hot"></i> Boissons Chaudes</div>
+        <div class="cat-tab" data-target="boissons-fraiches"><i class="fas fa-glass-water"></i> Boissons Fraîches</div>
+        <div class="cat-tab" data-target="boissons-glacees"><i class="fas fa-snowflake"></i> Boissons Glacées</div>
+        <div class="cat-tab" data-target="cocktails"><i class="fas fa-martini-glass-citrus"></i> Cocktail & Chill</div>
+        <div class="cat-tab" data-target="bubble-tea"><i class="fas fa-circle-dot"></i> Iced Bubble Tea</div>
+        <div class="cat-tab" data-target="instants-glaces"><i class="fas fa-ice-cream"></i> Instants Glacées</div>
+        <div class="cat-tab" data-target="milkshakes"><i class="fas fa-blender"></i> Milkshake</div>
+        <div class="cat-tab" data-target="patisseries"><i class="fas fa-birthday-cake"></i> Pâtisseries</div>
+        <div class="cat-tab" data-target="viennoiseries"><i class="fas fa-bread-slice"></i> Viennoiseries</div>
+        <div class="cat-tab" data-target="options"><i class="fas fa-plus-circle"></i> Options</div>
+    </div>
+</div>
+
+<div class="sec-title">
+    <span class="sec-line"></span>
+    <span class="sec-text">La Carte</span>
+    <span class="sec-line"></span>
+</div>
+
+<main>
+
+<!-- CRÊPES -->
+<section class="menu-section" id="crepes">
+    <div class="sub-title"><span class="sub-title-line"></span><span class="sub-title-text">🥞 Crêpes — Visualisation 3D</span><span class="sub-title-line"></span></div>
+    <div class="menu-card-grid">
+
+        <div class="menu-item-card">
+            <div class="item-media-wrap">
+                <model-viewer src="https://pub-235bb593f2704dea88a5c6c4fda2c910.r2.dev/crepe%20chocolat%20dz.glb"
+                    alt="Crêpe Chocolat" camera-controls auto-rotate
+                    ar ar-modes="webxr scene-viewer quick-look"
+                    shadow-intensity="1" style="width:100%;height:100%;display:block;">
+                    <button slot="ar-button" class="ar-btn">🍽 voir mon dessert</button>
+                </model-viewer>
+            </div>
+            <div class="item-info"><div class="item-header-row"><h3 class="item-name">Crêpe Chocolat</h3><span class="item-price">600 DA</span></div><p class="item-desc">Crêpe au chocolat fondu.</p></div>
+        </div>
+
+        <div class="menu-item-card">
+            <div class="item-media-wrap">
+                <model-viewer src="https://pub-235bb593f2704dea88a5c6c4fda2c910.r2.dev/crepe%20bueno%20dz.glb"
+                    alt="Crêpe Bueno" camera-controls auto-rotate
+                    ar ar-modes="webxr scene-viewer quick-look"
+                    shadow-intensity="1" style="width:100%;height:100%;display:block;">
+                    <button slot="ar-button" class="ar-btn">🍽 voir mon dessert</button>
+                </model-viewer>
+            </div>
+            <div class="item-info"><div class="item-header-row"><h3 class="item-name">Crêpe Bueno</h3><span class="item-price">600 DA</span></div><p class="item-desc">Crêpe fourrée au chocolat Bueno.</p></div>
+        </div>
+
+        <div class="menu-item-card">
+            <div class="item-media-wrap">
+                <model-viewer src="https://pub-235bb593f2704dea88a5c6c4fda2c910.r2.dev/crepe%20pistache%20dz.glb"
+                    alt="Crêpe Pistache" camera-controls auto-rotate
+                    ar ar-modes="webxr scene-viewer quick-look"
+                    shadow-intensity="1" style="width:100%;height:100%;display:block;">
+                    <button slot="ar-button" class="ar-btn">🍽 voir mon dessert</button>
+                </model-viewer>
+            </div>
+            <div class="item-info"><div class="item-header-row"><h3 class="item-name">Crêpe Pistache</h3><span class="item-price">600 DA</span></div><p class="item-desc">Crêpe à la crème de pistache.</p></div>
+        </div>
+
+        <div class="menu-item-card">
+            <div class="item-media-wrap">
+                <model-viewer src="https://pub-235bb593f2704dea88a5c6c4fda2c910.r2.dev/crepe%20caramel.glb"
+                    alt="Crêpe Caramel" camera-controls auto-rotate
+                    ar ar-modes="webxr scene-viewer quick-look"
+                    shadow-intensity="1" style="width:100%;height:100%;display:block;">
+                    <button slot="ar-button" class="ar-btn">🍽 voir mon dessert</button>
+                </model-viewer>
+            </div>
+            <div class="item-info"><div class="item-header-row"><h3 class="item-name">Crêpe Caramel</h3><span class="item-price">600 DA</span></div><p class="item-desc">Crêpe au caramel onctueux.</p></div>
+        </div>
+
+        <div class="menu-item-card">
+            <div class="item-media-wrap">
+                <model-viewer src="https://pub-235bb593f2704dea88a5c6c4fda2c910.r2.dev/crepe%20nature%20dz.glb"
+                    alt="Crêpe Nature" camera-controls auto-rotate
+                    ar ar-modes="webxr scene-viewer quick-look"
+                    shadow-intensity="1" style="width:100%;height:100%;display:block;">
+                    <button slot="ar-button" class="ar-btn">🍽 voir mon dessert</button>
+                </model-viewer>
+            </div>
+            <div class="item-info"><div class="item-header-row"><h3 class="item-name">Crêpe Nature</h3><span class="item-price">600 DA</span></div><p class="item-desc">Crêpe nature classique.</p></div>
+        </div>
+
+        <div class="menu-item-card">
+            <div class="item-media-wrap"><div class="no-media-ph"><i class="fas fa-stroopwafel"></i><span>Bientôt en 3D</span></div></div>
+            <div class="item-info"><div class="item-header-row"><h3 class="item-name">Crêpe Chocolat Banane</h3><span class="item-price">700 DA</span></div><p class="item-desc">Crêpe chocolat et rondelles de banane.</p></div>
+        </div>
+
+        <div class="menu-item-card">
+            <div class="item-media-wrap">
+                <model-viewer src="https://pub-235bb593f2704dea88a5c6c4fda2c910.r2.dev/crepe%202%20fruits%20dz.glb"
+                    alt="Crêpe 2 Fruits" camera-controls auto-rotate
+                    ar ar-modes="webxr scene-viewer quick-look"
+                    shadow-intensity="1" style="width:100%;height:100%;display:block;">
+                    <button slot="ar-button" class="ar-btn">🍽 voir mon dessert</button>
+                </model-viewer>
+            </div>
+            <div class="item-info"><div class="item-header-row"><h3 class="item-name">Crêpe Chocolat 2 Fruits</h3><span class="item-price">800 DA</span></div><p class="item-desc">Crêpe chocolat et deux fruits au choix.</p></div>
+        </div>
+
+        <div class="menu-item-card">
+            <div class="item-media-wrap">
+                <model-viewer src="https://pub-235bb593f2704dea88a5c6c4fda2c910.r2.dev/crepe%203%20fruits%20dz.glb"
+                    alt="Crêpe 3 Fruits" camera-controls auto-rotate
+                    ar ar-modes="webxr scene-viewer quick-look"
+                    shadow-intensity="1" style="width:100%;height:100%;display:block;">
+                    <button slot="ar-button" class="ar-btn">🍽 voir mon dessert</button>
+                </model-viewer>
+            </div>
+            <div class="item-info"><div class="item-header-row"><h3 class="item-name">Crêpe Chocolat 3 Fruits</h3><span class="item-price">900 DA</span></div><p class="item-desc">Crêpe chocolat et trois fruits au choix.</p></div>
+        </div>
+
+        <div class="menu-item-card">
+            <div class="item-media-wrap">
+                <model-viewer src="https://pub-235bb593f2704dea88a5c6c4fda2c910.r2.dev/crepe%20nutella%20croustillante.glb"
+                    alt="Crêpe Nutella Croustillante" camera-controls auto-rotate
+                    ar ar-modes="webxr scene-viewer quick-look"
+                    shadow-intensity="1" style="width:100%;height:100%;display:block;">
+                    <button slot="ar-button" class="ar-btn">🍽 voir mon dessert</button>
+                </model-viewer>
+            </div>
+            <div class="item-info"><div class="item-header-row"><h3 class="item-name">Crêpe Nutella Croustillante</h3><span class="item-price">700 DA</span></div><p class="item-desc">Crêpe au Nutella et éclats croustillants.</p></div>
+        </div>
+
+        <div class="menu-item-card">
+            <div class="item-media-wrap">
+                <model-viewer src="https://pub-235bb593f2704dea88a5c6c4fda2c910.r2.dev/crepe%20dzira.glb"
+                    alt="Crêpe Dzira" camera-controls auto-rotate
+                    ar ar-modes="webxr scene-viewer quick-look"
+                    shadow-intensity="1" style="width:100%;height:100%;display:block;">
+                    <button slot="ar-button" class="ar-btn">🍽 voir mon dessert</button>
+                </model-viewer>
+            </div>
+            <div class="item-info"><div class="item-header-row"><h3 class="item-name">Crêpe Dzira ✦</h3><span class="item-price">1200 DA</span></div><p class="item-desc">Nutella et fruits et glace et fruits secs.</p></div>
+        </div>
+
+    </div>
+</section>
+
+<!-- GAUFRES -->
+<section class="menu-section" id="gaufres">
+    <div class="sub-title"><span class="sub-title-line"></span><span class="sub-title-text">🧇 Gaufres — Visualisation 3D</span><span class="sub-title-line"></span></div>
+    <div class="menu-card-grid">
+
+        <div class="menu-item-card"><div class="item-media-wrap"><model-viewer src="https://pub-235bb593f2704dea88a5c6c4fda2c910.r2.dev/gaufre%20chocolat%20dz.glb" alt="Gaufre Chocolat" camera-controls auto-rotate ar ar-modes="webxr scene-viewer quick-look" shadow-intensity="1" style="width:100%;height:100%;display:block;"><button slot="ar-button" class="ar-btn">🍽 voir mon dessert</button></model-viewer></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Gaufre Chocolat</h3><span class="item-price">700 DA</span></div><p class="item-desc">Gaufre croustillante au chocolat.</p></div></div>
+
+        <div class="menu-item-card"><div class="item-media-wrap"><model-viewer src="https://pub-235bb593f2704dea88a5c6c4fda2c910.r2.dev/gaufre%20bueno.glb" alt="Gaufre Bueno" camera-controls auto-rotate ar ar-modes="webxr scene-viewer quick-look" shadow-intensity="1" style="width:100%;height:100%;display:block;"><button slot="ar-button" class="ar-btn">🍽 voir mon dessert</button></model-viewer></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Gaufre Bueno</h3><span class="item-price">700 DA</span></div><p class="item-desc">Gaufre croustillante au Bueno.</p></div></div>
+
+        <div class="menu-item-card"><div class="item-media-wrap"><model-viewer src="https://pub-235bb593f2704dea88a5c6c4fda2c910.r2.dev/gaufre%20pistache.glb" alt="Gaufre Pistache" camera-controls auto-rotate ar ar-modes="webxr scene-viewer quick-look" shadow-intensity="1" style="width:100%;height:100%;display:block;"><button slot="ar-button" class="ar-btn">🍽 voir mon dessert</button></model-viewer></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Gaufre Pistache</h3><span class="item-price">700 DA</span></div><p class="item-desc">Gaufre croustillante à la pistache.</p></div></div>
+
+        <div class="menu-item-card"><div class="item-media-wrap"><model-viewer src="https://pub-235bb593f2704dea88a5c6c4fda2c910.r2.dev/gaufre%20caramel.glb" alt="Gaufre Caramel" camera-controls auto-rotate ar ar-modes="webxr scene-viewer quick-look" shadow-intensity="1" style="width:100%;height:100%;display:block;"><button slot="ar-button" class="ar-btn">🍽 voir mon dessert</button></model-viewer></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Gaufre Caramel</h3><span class="item-price">700 DA</span></div><p class="item-desc">Gaufre croustillante au caramel.</p></div></div>
+
+        <div class="menu-item-card"><div class="item-media-wrap"><model-viewer src="https://pub-235bb593f2704dea88a5c6c4fda2c910.r2.dev/gaufre%20nature%20dz.glb" alt="Gaufre Nature" camera-controls auto-rotate ar ar-modes="webxr scene-viewer quick-look" shadow-intensity="1" style="width:100%;height:100%;display:block;"><button slot="ar-button" class="ar-btn">🍽 voir mon dessert</button></model-viewer></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Gaufre Nature</h3><span class="item-price">700 DA</span></div><p class="item-desc">Gaufre croustillante nature.</p></div></div>
+
+        <div class="menu-item-card"><div class="item-media-wrap"><model-viewer src="https://pub-235bb593f2704dea88a5c6c4fda2c910.r2.dev/gaufre%20chocolat%20dz.glb" alt="Gaufre Nutella" camera-controls auto-rotate ar ar-modes="webxr scene-viewer quick-look" shadow-intensity="1" style="width:100%;height:100%;display:block;"><button slot="ar-button" class="ar-btn">🍽 voir mon dessert</button></model-viewer></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Gaufre Nutella</h3><span class="item-price">900 DA</span></div><p class="item-desc">Gaufre généreuse au Nutella.</p></div></div>
+
+        <div class="menu-item-card"><div class="item-media-wrap"><model-viewer src="https://pub-235bb593f2704dea88a5c6c4fda2c910.r2.dev/gaufre%20dzira.glb" alt="Gaufre Dzira" camera-controls auto-rotate ar ar-modes="webxr scene-viewer quick-look" shadow-intensity="1" style="width:100%;height:100%;display:block;"><button slot="ar-button" class="ar-btn">🍽 voir mon dessert</button></model-viewer></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Gaufre Dzira ✦</h3><span class="item-price">1200 DA</span></div><p class="item-desc">Nutella et fruits et glace et fruits secs.</p></div></div>
+
+    </div>
+</section>
+
+<!-- PANCAKES -->
+<section class="menu-section" id="pancakes">
+    <div class="sub-title"><span class="sub-title-line"></span><span class="sub-title-text">🥞 Pancakes — Visualisation 3D</span><span class="sub-title-line"></span></div>
+    <div class="menu-card-grid">
+
+        <div class="menu-item-card"><div class="item-media-wrap"><model-viewer src="https://pub-235bb593f2704dea88a5c6c4fda2c910.r2.dev/pancake%20chocolat%20dz.glb" alt="Pancake Chocolat" camera-controls auto-rotate ar ar-modes="webxr scene-viewer quick-look" shadow-intensity="1" style="width:100%;height:100%;display:block;"><button slot="ar-button" class="ar-btn">🍽 voir mon dessert</button></model-viewer></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Pancake Chocolat</h3><span class="item-price">600 DA</span></div><p class="item-desc">Pancakes moelleux au chocolat.</p></div></div>
+
+        <div class="menu-item-card"><div class="item-media-wrap"><model-viewer src="https://pub-235bb593f2704dea88a5c6c4fda2c910.r2.dev/pancake%20bueno.glb" alt="Pancake Bueno" camera-controls auto-rotate ar ar-modes="webxr scene-viewer quick-look" shadow-intensity="1" style="width:100%;height:100%;display:block;"><button slot="ar-button" class="ar-btn">🍽 voir mon dessert</button></model-viewer></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Pancake Bueno</h3><span class="item-price">600 DA</span></div><p class="item-desc">Pancakes moelleux au Bueno.</p></div></div>
+
+        <div class="menu-item-card"><div class="item-media-wrap"><model-viewer src="https://pub-235bb593f2704dea88a5c6c4fda2c910.r2.dev/pancake%20pistache%20dz.glb" alt="Pancake Pistache" camera-controls auto-rotate ar ar-modes="webxr scene-viewer quick-look" shadow-intensity="1" style="width:100%;height:100%;display:block;"><button slot="ar-button" class="ar-btn">🍽 voir mon dessert</button></model-viewer></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Pancake Pistache</h3><span class="item-price">600 DA</span></div><p class="item-desc">Pancakes moelleux à la pistache.</p></div></div>
+
+        <div class="menu-item-card"><div class="item-media-wrap"><model-viewer src="https://pub-235bb593f2704dea88a5c6c4fda2c910.r2.dev/pancake%20caramel.glb" alt="Pancake Caramel" camera-controls auto-rotate ar ar-modes="webxr scene-viewer quick-look" shadow-intensity="1" style="width:100%;height:100%;display:block;"><button slot="ar-button" class="ar-btn">🍽 voir mon dessert</button></model-viewer></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Pancake Caramel</h3><span class="item-price">600 DA</span></div><p class="item-desc">Pancakes moelleux au caramel.</p></div></div>
+
+        <div class="menu-item-card"><div class="item-media-wrap"><div class="no-media-ph"><i class="fas fa-layer-group"></i><span>Bientôt en 3D</span></div></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Pancake Nature</h3><span class="item-price">600 DA</span></div><p class="item-desc">Pancakes nature classiques.</p></div></div>
+
+        <div class="menu-item-card"><div class="item-media-wrap"><model-viewer src="https://pub-235bb593f2704dea88a5c6c4fda2c910.r2.dev/pancake%20banane%20dz.glb" alt="Pancake Chocolat Banane" camera-controls auto-rotate ar ar-modes="webxr scene-viewer quick-look" shadow-intensity="1" style="width:100%;height:100%;display:block;"><button slot="ar-button" class="ar-btn">🍽 voir mon dessert</button></model-viewer></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Pancake Chocolat Banane</h3><span class="item-price">700 DA</span></div><p class="item-desc">Pancakes chocolat et banane.</p></div></div>
+
+        <div class="menu-item-card"><div class="item-media-wrap"><model-viewer src="https://pub-235bb593f2704dea88a5c6c4fda2c910.r2.dev/pancake%202%20fruits%20dz.glb" alt="Pancake 2 Fruits" camera-controls auto-rotate ar ar-modes="webxr scene-viewer quick-look" shadow-intensity="1" style="width:100%;height:100%;display:block;"><button slot="ar-button" class="ar-btn">🍽 voir mon dessert</button></model-viewer></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Pancake Chocolat 2 Fruits</h3><span class="item-price">800 DA</span></div><p class="item-desc">Pancakes chocolat et deux fruits.</p></div></div>
+
+        <div class="menu-item-card"><div class="item-media-wrap"><div class="no-media-ph"><i class="fas fa-layer-group"></i><span>Bientôt en 3D</span></div></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Pancake Chocolat 3 Fruits</h3><span class="item-price">900 DA</span></div><p class="item-desc">Pancakes chocolat et trois fruits.</p></div></div>
+
+        <div class="menu-item-card"><div class="item-media-wrap"><model-viewer src="https://pub-235bb593f2704dea88a5c6c4fda2c910.r2.dev/pancake%20chocolat%20dz.glb" alt="Pancake Nutella" camera-controls auto-rotate ar ar-modes="webxr scene-viewer quick-look" shadow-intensity="1" style="width:100%;height:100%;display:block;"><button slot="ar-button" class="ar-btn">🍽 voir mon dessert</button></model-viewer></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Pancake Nutella</h3><span class="item-price">700 DA</span></div><p class="item-desc">Pancakes généreux au Nutella.</p></div></div>
+
+        <div class="menu-item-card"><div class="item-media-wrap"><div class="no-media-ph"><i class="fas fa-layer-group"></i><span>Bientôt en 3D</span></div></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Pancake Sirop d'érable</h3><span class="item-price">1000 DA</span></div><p class="item-desc">Pancakes au sirop d'érable.</p></div></div>
+
+        <div class="menu-item-card"><div class="item-media-wrap"><model-viewer src="https://pub-235bb593f2704dea88a5c6c4fda2c910.r2.dev/pancake%20dzira.glb" alt="Pancake Dzira" camera-controls auto-rotate ar ar-modes="webxr scene-viewer quick-look" shadow-intensity="1" style="width:100%;height:100%;display:block;"><button slot="ar-button" class="ar-btn">🍽 voir mon dessert</button></model-viewer></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Pancake Dzira ✦</h3><span class="item-price">1200 DA</span></div><p class="item-desc">Nutella et fruits et glace et fruits secs.</p></div></div>
+
+    </div>
+</section>
+
+<!-- AUTRES DESSERTS -->
+<section class="menu-section" id="autres-desserts">
+    <div class="sub-title"><span class="sub-title-line"></span><span class="sub-title-text">🍓 Autres Desserts</span><span class="sub-title-line"></span></div>
+    <div class="menu-card-grid">
+
+        <div class="menu-item-card"><div class="item-media-wrap"><model-viewer src="https://pub-235bb593f2704dea88a5c6c4fda2c910.r2.dev/assiete%20de%20fruits%20dz.glb" alt="Assiette de fruits" camera-controls auto-rotate ar ar-modes="webxr scene-viewer quick-look" shadow-intensity="1" style="width:100%;height:100%;display:block;"><button slot="ar-button" class="ar-btn">🍽 voir mon dessert</button></model-viewer></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Assiette de fruits</h3><span class="item-price">1400 DA</span></div><p class="item-desc">Fruits de saison.</p></div></div>
+
+        <div class="menu-item-card"><div class="item-media-wrap"><div class="no-media-ph"><i class="fas fa-heart"></i><span>Photo à venir</span></div></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Fraisier</h3><span class="item-price">700 DA</span></div><p class="item-desc">Cœur au fraise.</p></div></div>
+
+        <div class="menu-item-card"><div class="item-media-wrap"><div class="no-media-ph"><i class="fas fa-circle-dot"></i><span>Photo à venir</span></div></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Tarte au fraise</h3><span class="item-price">600 DA</span></div></div></div>
+
+    </div>
+</section>
+
+<!-- BOISSONS CHAUDES -->
+<section class="menu-section" id="boissons-chaudes">
+    <div class="sub-title"><span class="sub-title-line"></span><span class="sub-title-text">☕ Boissons Chaudes</span><span class="sub-title-line"></span></div>
+    <div class="menu-card-grid">
+        <div class="menu-item-card"><div class="item-media-wrap"><img class="item-img" src="https://pub-a6f3892da45a4251bce1aed37a3c516a.r2.dev/espresso.jpeg" alt="Espresso" loading="lazy"></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Espresso</h3><span class="item-price">300 DA</span></div><p class="item-desc">Café noir classique.</p></div></div>
+        <div class="menu-item-card"><div class="item-media-wrap"><img class="item-img" src="https://pub-a6f3892da45a4251bce1aed37a3c516a.r2.dev/doppio.jpg" alt="Doppio" loading="lazy"></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Doppio</h3><span class="item-price">450 DA</span></div><p class="item-desc">Double espresso.</p></div></div>
+        <div class="menu-item-card"><div class="item-media-wrap"><img class="item-img" src="https://pub-a6f3892da45a4251bce1aed37a3c516a.r2.dev/capsule%20lavazza.jpeg" alt="Capsule Nespresso" loading="lazy"></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Capsule Nespresso</h3><span class="item-price">400 DA</span></div><p class="item-desc">Capsule de café premium.</p></div></div>
+        <div class="menu-item-card"><div class="item-media-wrap"><img class="item-img" src="https://pub-a6f3892da45a4251bce1aed37a3c516a.r2.dev/capsule%20lavazza.jpeg" alt="Capsule Lavazza" loading="lazy"></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Capsule Lavazza</h3><span class="item-price">400 DA</span></div><p class="item-desc">Capsule de café premium.</p></div></div>
+        <div class="menu-item-card"><div class="item-media-wrap"><img class="item-img" src="https://pub-a6f3892da45a4251bce1aed37a3c516a.r2.dev/capsule%20lavazza.jpeg" alt="Capsule Illy" loading="lazy"></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Capsule Illy</h3><span class="item-price">350 DA</span></div><p class="item-desc">Sélection de café Illy.</p></div></div>
+        <div class="menu-item-card"><div class="item-media-wrap"><img class="item-img" src="https://pub-a6f3892da45a4251bce1aed37a3c516a.r2.dev/capsule%20lavazza.jpeg" alt="Capsule L'Or" loading="lazy"></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Capsule L'Or</h3><span class="item-price">350 DA</span></div><p class="item-desc">Sélection de café L'Or.</p></div></div>
+        <div class="menu-item-card"><div class="item-media-wrap"><img class="item-img" src="https://pub-a6f3892da45a4251bce1aed37a3c516a.r2.dev/Affogato.jpg" alt="Affogato" loading="lazy"></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Affogato</h3><span class="item-price">500 DA</span></div><p class="item-desc">Espresso sur une boule de glace vanille.</p></div></div>
+        <div class="menu-item-card"><div class="item-media-wrap"><img class="item-img" src="https://pub-a6f3892da45a4251bce1aed37a3c516a.r2.dev/Affogato.jpg" alt="Americano" loading="lazy"></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Americano</h3><span class="item-price">400 DA</span></div><p class="item-desc">Espresso allongé à l'eau chaude.</p></div></div>
+        <div class="menu-item-card"><div class="item-media-wrap"><img class="item-img" src="https://pub-a6f3892da45a4251bce1aed37a3c516a.r2.dev/cappucino.jpeg" alt="Cappuccino Classique" loading="lazy"></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Cappuccino Classique</h3><span class="item-price">400 DA</span></div><p class="item-desc">Mélange espresso et mousse de lait.</p></div></div>
+        <div class="menu-item-card"><div class="item-media-wrap"><img class="item-img" src="https://pub-a6f3892da45a4251bce1aed37a3c516a.r2.dev/Cappuccino%20Aromatise%CC%81.jpg" alt="Cappuccino Aromatisé" loading="lazy"></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Cappuccino Aromatisé</h3><span class="item-price">500 DA</span></div><p class="item-desc">Cappuccino avec arôme au choix.</p></div></div>
+        <div class="menu-item-card"><div class="item-media-wrap"><img class="item-img" src="https://pub-a6f3892da45a4251bce1aed37a3c516a.r2.dev/matcha%20latte.jpeg" alt="Matcha Latte" loading="lazy"></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Matcha Latte</h3><span class="item-price">550 DA</span></div><p class="item-desc">Thé matcha avec lait chaud.</p></div></div>
+        <div class="menu-item-card"><div class="item-media-wrap"><img class="item-img" src="https://pub-a6f3892da45a4251bce1aed37a3c516a.r2.dev/latte%20classique.jpg" alt="Latte Classique" loading="lazy"></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Latte Classique</h3><span class="item-price">400 DA</span></div><p class="item-desc">Espresso avec beaucoup de lait chaud.</p></div></div>
+        <div class="menu-item-card"><div class="item-media-wrap"><div class="no-media-ph"><i class="fas fa-mug-hot"></i></div></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Latte Aromatisé</h3><span class="item-price">500 DA</span></div><p class="item-desc">Latte avec arôme au choix.</p></div></div>
+        <div class="menu-item-card"><div class="item-media-wrap"><div class="no-media-ph"><i class="fas fa-mug-hot"></i></div></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Latte Mocha</h3><span class="item-price">600 DA</span></div><p class="item-desc">Espresso chocolat et lait chaud.</p></div></div>
+        <div class="menu-item-card"><div class="item-media-wrap"><img class="item-img" src="https://pub-a6f3892da45a4251bce1aed37a3c516a.r2.dev/Cafe%CC%81%20moka%20a%CC%80%20la%20Parisienne.jpg" alt="Café moka à la Parisienne" loading="lazy"></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Café moka à la Parisienne</h3><span class="item-price">500 DA</span></div><p class="item-desc">Café moka façon parisienne.</p></div></div>
+        <div class="menu-item-card"><div class="item-media-wrap"><img class="item-img" src="https://pub-a6f3892da45a4251bce1aed37a3c516a.r2.dev/Dalgona.jpg" alt="Dalgona" loading="lazy"></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Dalgona</h3><span class="item-price">500 DA</span></div><p class="item-desc">Café fouetté miel et une touche de lait.</p></div></div>
+        <div class="menu-item-card"><div class="item-media-wrap"><img class="item-img" src="https://pub-a6f3892da45a4251bce1aed37a3c516a.r2.dev/spanish%20coffee.jpg" alt="Spanish Coffee" loading="lazy"></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Spanish Coffee</h3><span class="item-price">500 DA</span></div><p class="item-desc">Espresso et lait concentré sucré.</p></div></div>
+        <div class="menu-item-card"><div class="item-media-wrap"><img class="item-img" src="https://pub-a6f3892da45a4251bce1aed37a3c516a.r2.dev/dark%20storm.jpeg" alt="Dark Storm" loading="lazy"></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Dark Storm</h3><span class="item-price">500 DA</span></div><p class="item-desc">Espresso et jus d'orange et caramel.</p></div></div>
+        <div class="menu-item-card"><div class="item-media-wrap"><img class="item-img" src="https://pub-a6f3892da45a4251bce1aed37a3c516a.r2.dev/latte%CC%81%20tiramisu.jpg" alt="Latté Tiramisu" loading="lazy"></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Latté Tiramisu</h3><span class="item-price">700 DA</span></div><p class="item-desc">Mascarpone et boudoir et cacao et vanille.</p></div></div>
+        <div class="menu-item-card"><div class="item-media-wrap"><img class="item-img" src="https://pub-a6f3892da45a4251bce1aed37a3c516a.r2.dev/chocolat%20chaud%2070%25.jpg" alt="Chocolat Chaud 70% Cacao" loading="lazy"></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Chocolat Chaud 70% Cacao</h3><span class="item-price">700 DA</span></div><p class="item-desc">Chocolat chaud onctueux 70% cacao.</p></div></div>
+        <div class="menu-item-card"><div class="item-media-wrap"><img class="item-img" src="https://pub-a6f3892da45a4251bce1aed37a3c516a.r2.dev/chocolat%20chaud%2050%25.jpg" alt="Chocolat Chaud 50% Cacao" loading="lazy"></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Chocolat Chaud 50% Cacao</h3><span class="item-price">650 DA</span></div><p class="item-desc">Chocolat chaud onctueux 50% cacao.</p></div></div>
+        <div class="menu-item-card"><div class="item-media-wrap"><img class="item-img" src="https://pub-a6f3892da45a4251bce1aed37a3c516a.r2.dev/chocolat%20chaud%20bounty.jpg" alt="Chocolat Chaud Bounty" loading="lazy"></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Chocolat Chaud Bounty</h3><span class="item-price">700 DA</span></div><p class="item-desc">Chocolat chaud à la noix de coco.</p></div></div>
+        <div class="menu-item-card"><div class="item-media-wrap"><img class="item-img" src="https://pub-a6f3892da45a4251bce1aed37a3c516a.r2.dev/chocolat%20caramel%20fleur%20de%20sel.jpg" alt="Chocolat Caramel Fleur de Sel" loading="lazy"></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Chocolat Caramel Fleur de Sel</h3><span class="item-price">500 DA</span></div><p class="item-desc">Chocolat chaud caramel et pointe de sel.</p></div></div>
+        <div class="menu-item-card"><div class="item-media-wrap"><img class="item-img" src="https://pub-a6f3892da45a4251bce1aed37a3c516a.r2.dev/cafe%CC%81%20lie%CC%81geois.jpg" alt="Café Liégeois" loading="lazy"></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Café Liégeois</h3><span class="item-price">650 DA</span></div><p class="item-desc">Glace et chantilly et cacao.</p></div></div>
+        <div class="menu-item-card"><div class="item-media-wrap"><img class="item-img" src="https://pub-a6f3892da45a4251bce1aed37a3c516a.r2.dev/spe%CC%81culoos%20latte%CC%81.jpg" alt="Spéculoos Latté" loading="lazy"></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Spéculoos Latté</h3><span class="item-price">550 DA</span></div><p class="item-desc">Latté au goût de biscuit Spéculoos.</p></div></div>
+        <div class="menu-item-card"><div class="item-media-wrap"><img class="item-img" src="https://pub-a6f3892da45a4251bce1aed37a3c516a.r2.dev/the%CC%81%20maison%20infusion.jpeg" alt="Thé maison" loading="lazy"></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Thé maison infusion cacahuètes</h3><span class="item-price">300 DA</span></div><p class="item-desc">Thé ou infusion selon arrivage.</p></div></div>
+    </div>
+</section>
+
+<!-- BOISSONS FRAÎCHES -->
+<section class="menu-section" id="boissons-fraiches">
+    <div class="sub-title"><span class="sub-title-line"></span><span class="sub-title-text">🧃 Boissons Fraîches</span><span class="sub-title-line"></span></div>
+    <div class="menu-card-grid">
+        <div class="menu-item-card"><div class="item-media-wrap"><img class="item-img" src="https://pub-a6f3892da45a4251bce1aed37a3c516a.r2.dev/sorbet%20de%20saison.jpg" alt="Sorbet de saison" loading="lazy"></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Sorbet de saison</h3><span class="item-price">300 DA</span></div><p class="item-desc">Sorbet rafraîchissant aux fruits.</p></div></div>
+        <div class="menu-item-card"><div class="item-media-wrap"><div class="no-media-ph"><i class="fas fa-glass-water"></i></div></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Jus de fruit de saison</h3><span class="item-price">450 DA</span></div><p class="item-desc">Jus de fruits fraîchement pressés.</p></div></div>
+        <div class="menu-item-card"><div class="item-media-wrap"><img class="item-img" src="https://pub-a6f3892da45a4251bce1aed37a3c516a.r2.dev/cocktail%20de%20fruits.jpeg" alt="Cocktail de fruits" loading="lazy"></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Cocktail de fruits</h3><span class="item-price">500 DA</span></div><p class="item-desc">Cocktail de fruits frais mixés.</p></div></div>
+        <div class="menu-item-card"><div class="item-media-wrap"><div class="no-media-ph"><i class="fas fa-bottle-water"></i></div></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Eau minérale PM</h3><span class="item-price">100 DA</span></div><p class="item-desc">Eau minérale petit modèle.</p></div></div>
+        <div class="menu-item-card"><div class="item-media-wrap"><div class="no-media-ph"><i class="fas fa-bottle-water"></i></div></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Eau pétillante PM</h3><span class="item-price">150 DA</span></div><p class="item-desc">Eau pétillante petit modèle.</p></div></div>
+        <div class="menu-item-card"><div class="item-media-wrap"><div class="no-media-ph"><i class="fas fa-glass-water"></i></div></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Jus fraise</h3><span class="item-price">500 DA</span></div><p class="item-desc">Fraise fraîche.</p></div></div>
+    </div>
+</section>
+
+<!-- BOISSONS GLACÉES -->
+<section class="menu-section" id="boissons-glacees">
+    <div class="sub-title"><span class="sub-title-line"></span><span class="sub-title-text">🧊 Boissons Glacées</span><span class="sub-title-line"></span></div>
+    <div class="menu-card-grid">
+        <div class="menu-item-card"><div class="item-media-wrap"><img class="item-img" src="https://pub-a6f3892da45a4251bce1aed37a3c516a.r2.dev/cold%20brew.jpg" alt="Cold Brew" loading="lazy"></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Cold Brew</h3><span class="item-price">500 DA</span></div><p class="item-desc">Café infusé à froid pendant plusieurs heures.</p></div></div>
+        <div class="menu-item-card"><div class="item-media-wrap"><div class="no-media-ph"><i class="fas fa-snowflake"></i></div></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Iced Coffee</h3><span class="item-price">400 DA</span></div><p class="item-desc">Café glacé classique avec glaçons.</p></div></div>
+        <div class="menu-item-card"><div class="item-media-wrap"><img class="item-img" src="https://pub-a6f3892da45a4251bce1aed37a3c516a.r2.dev/iced%20matcha%20latte%20mangue.jpg" alt="Iced Matcha Latte Mangue" loading="lazy"></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Iced Matcha Latte Mangue</h3><span class="item-price">600 DA</span></div><p class="item-desc">Matcha glacé à la mangue.</p></div></div>
+        <div class="menu-item-card"><div class="item-media-wrap"><img class="item-img" src="https://pub-a6f3892da45a4251bce1aed37a3c516a.r2.dev/iced%20matcha%20latte%20fraise.jpg" alt="Iced Matcha Latte Fraise" loading="lazy"></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Iced Matcha Latte Fraise</h3><span class="item-price">600 DA</span></div><p class="item-desc">Matcha glacé à la fraise.</p></div></div>
+        <div class="menu-item-card"><div class="item-media-wrap"><img class="item-img" src="https://pub-a6f3892da45a4251bce1aed37a3c516a.r2.dev/iced%20latte%20vanille.jpg" alt="Iced Latte Vanille" loading="lazy"></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Iced Latte Vanille</h3><span class="item-price">500 DA</span></div><p class="item-desc">Latte glacé à la vanille.</p></div></div>
+        <div class="menu-item-card"><div class="item-media-wrap"><img class="item-img" src="https://pub-a6f3892da45a4251bce1aed37a3c516a.r2.dev/iced%20latte%20noisette.jpg" alt="Iced Latte Noisette" loading="lazy"></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Iced Latte Noisette</h3><span class="item-price">500 DA</span></div><p class="item-desc">Latte glacé à la noisette.</p></div></div>
+        <div class="menu-item-card"><div class="item-media-wrap"><img class="item-img" src="https://pub-a6f3892da45a4251bce1aed37a3c516a.r2.dev/iced%20latte%20caramel.jpg" alt="Iced Latte Caramel" loading="lazy"></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Iced Latte Caramel</h3><span class="item-price">500 DA</span></div><p class="item-desc">Latte glacé au caramel.</p></div></div>
+        <div class="menu-item-card"><div class="item-media-wrap"><img class="item-img" src="https://pub-a6f3892da45a4251bce1aed37a3c516a.r2.dev/white%20mocha.jpg" alt="White Mocha" loading="lazy"></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">White Mocha</h3><span class="item-price">550 DA</span></div><p class="item-desc">Chocolat blanc et café glacé.</p></div></div>
+        <div class="menu-item-card"><div class="item-media-wrap"><img class="item-img" src="https://pub-a6f3892da45a4251bce1aed37a3c516a.r2.dev/iced%20cappucinno.jpg" alt="Iced Cappuccino" loading="lazy"></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Iced Cappuccino</h3><span class="item-price">500 DA</span></div><p class="item-desc">Cappuccino glacé mousseux.</p></div></div>
+        <div class="menu-item-card"><div class="item-media-wrap"><img class="item-img" src="https://pub-a6f3892da45a4251bce1aed37a3c516a.r2.dev/iced%20mojit.jpg" alt="Iced Mojito" loading="lazy"></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Iced Mojito</h3><span class="item-price">600 DA</span></div><p class="item-desc">Mojito glacé très rafraîchissant.</p></div></div>
+    </div>
+</section>
+
+<!-- COCKTAIL & CHILL -->
+<section class="menu-section" id="cocktails">
+    <div class="sub-title"><span class="sub-title-line"></span><span class="sub-title-text">🍸 Cocktail & Chill</span><span class="sub-title-line"></span></div>
+    <div class="menu-card-grid">
+        <div class="menu-item-card"><div class="item-media-wrap"><img class="item-img" src="https://pub-a6f3892da45a4251bce1aed37a3c516a.r2.dev/bleu%20hawaii.jpg" alt="Blue Hawaii" loading="lazy"></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Blue Hawaii</h3><span class="item-price">600 DA</span></div><p class="item-desc">Curaçao bleu · citron · jus d'Ananas.</p></div></div>
+        <div class="menu-item-card"><div class="item-media-wrap"><img class="item-img" src="https://pub-a6f3892da45a4251bce1aed37a3c516a.r2.dev/pina%20colada.jpeg" alt="Piña Colada" loading="lazy"></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Piña Colada</h3><span class="item-price">700 DA</span></div><p class="item-desc">Ananas · noix de coco · citron · jus d'Ananas.</p></div></div>
+        <div class="menu-item-card"><div class="item-media-wrap"><img class="item-img" src="https://pub-a6f3892da45a4251bce1aed37a3c516a.r2.dev/virgin%20tropical.jpg" alt="Virgin Tropical" loading="lazy"></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Virgin Tropical</h3><span class="item-price">700 DA</span></div><p class="item-desc">Avocat · pomme · jus d'Ananas.</p></div></div>
+        <div class="menu-item-card"><div class="item-media-wrap"><img class="item-img" src="https://pub-a6f3892da45a4251bce1aed37a3c516a.r2.dev/mojito%20classique.jpeg" alt="Mojito classique" loading="lazy"></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Mojito classique</h3><span class="item-price">500 DA</span></div><p class="item-desc">Citron · menthe fraîche · soda.</p></div></div>
+        <div class="menu-item-card"><div class="item-media-wrap"><img class="item-img" src="https://pub-a6f3892da45a4251bce1aed37a3c516a.r2.dev/mojito%20fraise.jpg" alt="Mojito Fraise" loading="lazy"></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Mojito Fraise</h3><span class="item-price">600 DA</span></div><p class="item-desc">Citron · menthe fraîche · arôme fraise.</p></div></div>
+        <div class="menu-item-card"><div class="item-media-wrap"><img class="item-img" src="https://pub-a6f3892da45a4251bce1aed37a3c516a.r2.dev/mojito%20framboise.jpg" alt="Mojito Framboise" loading="lazy"></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Mojito Framboise</h3><span class="item-price">600 DA</span></div><p class="item-desc">Citron · menthe fraîche · arôme framboise.</p></div></div>
+        <div class="menu-item-card"><div class="item-media-wrap"><img class="item-img" src="https://pub-a6f3892da45a4251bce1aed37a3c516a.r2.dev/mojito%20aromatise%CC%81.jpeg" alt="Mojito Fruits Rouges" loading="lazy"></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Mojito Fruits Rouges</h3><span class="item-price">600 DA</span></div><p class="item-desc">Citron · menthe fraîche · fruits rouges.</p></div></div>
+        <div class="menu-item-card"><div class="item-media-wrap"><img class="item-img" src="https://pub-a6f3892da45a4251bce1aed37a3c516a.r2.dev/peche%20exotique.jpeg" alt="Punch exotique" loading="lazy"></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Punch exotique</h3><span class="item-price">600 DA</span></div><p class="item-desc">Pomme · pêche · mangue · glaçons.</p></div></div>
+        <div class="menu-item-card"><div class="item-media-wrap"><img class="item-img" src="https://pub-a6f3892da45a4251bce1aed37a3c516a.r2.dev/bora%20bora.jpeg" alt="Bora Bora" loading="lazy"></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Bora Bora</h3><span class="item-price">600 DA</span></div><p class="item-desc">Fruit de la passion · litchi · jus d'ananas.</p></div></div>
+        <div class="menu-item-card"><div class="item-media-wrap"><div class="no-media-ph"><i class="fas fa-martini-glass-citrus"></i></div></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Cocktail Dzira ✦</h3><span class="item-price">900 DA</span></div><p class="item-desc">Degla · miel · zbib · lait entier.</p></div></div>
+        <div class="menu-item-card"><div class="item-media-wrap"><img class="item-img" src="https://pub-a6f3892da45a4251bce1aed37a3c516a.r2.dev/lavender%20rain.jpg" alt="Lavender Rain" loading="lazy"></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Lavender Rain</h3><span class="item-price">600 DA</span></div><p class="item-desc">Lavande · citron · eau pétillante.</p></div></div>
+        <div class="menu-item-card"><div class="item-media-wrap"><img class="item-img" src="https://pub-a6f3892da45a4251bce1aed37a3c516a.r2.dev/royal%20rose.jpg" alt="Royal Rose" loading="lazy"></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Royal Rose</h3><span class="item-price">600 DA</span></div><p class="item-desc">Citron · rose · soda.</p></div></div>
+        <div class="menu-item-card"><div class="item-media-wrap"><img class="item-img" src="https://pub-a6f3892da45a4251bce1aed37a3c516a.r2.dev/lavender%20flow.jpg" alt="Lavender Flow" loading="lazy"></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Lavender Flow</h3><span class="item-price">600 DA</span></div><p class="item-desc">Citron · lavande · soda.</p></div></div>
+        <div class="menu-item-card"><div class="item-media-wrap"><div class="no-media-ph"><i class="fas fa-martini-glass-citrus"></i></div></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Jasmine Garden</h3><span class="item-price">600 DA</span></div><p class="item-desc">Citron · jasmine · soda.</p></div></div>
+        <div class="menu-item-card"><div class="item-media-wrap"><div class="no-media-ph"><i class="fas fa-martini-glass-citrus"></i></div></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Angry Wave</h3><span class="item-price">600 DA</span></div><p class="item-desc">Blue Curaçao · citron · soda.</p></div></div>
+        <div class="menu-item-card"><div class="item-media-wrap"><img class="item-img" src="https://pub-a6f3892da45a4251bce1aed37a3c516a.r2.dev/sunrise.jpeg" alt="Sunrise" loading="lazy"></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Sunrise</h3><span class="item-price">600 DA</span></div><p class="item-desc">Orange · citron · grenadine.</p></div></div>
+        <div class="menu-item-card"><div class="item-media-wrap"><div class="no-media-ph"><i class="fas fa-martini-glass-citrus"></i></div></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Power on</h3><span class="item-price">700 DA</span></div><p class="item-desc">Betterave · gingembre · citron · orange.</p></div></div>
+        <div class="menu-item-card"><div class="item-media-wrap"><img class="item-img" src="https://pub-a6f3892da45a4251bce1aed37a3c516a.r2.dev/healthy.jpeg" alt="Healthy" loading="lazy"></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Healthy</h3><span class="item-price">600 DA</span></div><p class="item-desc">Orange · citron · miel · gingembre.</p></div></div>
+        <div class="menu-item-card"><div class="item-media-wrap"><div class="no-media-ph"><i class="fas fa-martini-glass-citrus"></i></div></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Black Tiger</h3><span class="item-price">600 DA</span></div><p class="item-desc">Double Espresso · caramel · lait concentré.</p></div></div>
+        <div class="menu-item-card"><div class="item-media-wrap"><div class="no-media-ph"><i class="fas fa-martini-glass-citrus"></i></div></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Eté Indien</h3><span class="item-price">650 DA</span></div><p class="item-desc">Orange · noix de coco · citron · grenadine.</p></div></div>
+    </div>
+</section>
+
+<!-- ICED BUBBLE TEA -->
+<section class="menu-section" id="bubble-tea">
+    <div class="sub-title"><span class="sub-title-line"></span><span class="sub-title-text">🧋 Iced Bubble Tea</span><span class="sub-title-line"></span></div>
+    <div class="menu-card-grid">
+        <div class="menu-item-card"><div class="item-media-wrap"><div class="no-media-ph"><i class="fas fa-circle-dot"></i></div></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Bubble Tea Cerise</h3><span class="item-price">500 DA</span></div><p class="item-desc">Thé aux perles saveur cerise.</p></div></div>
+        <div class="menu-item-card"><div class="item-media-wrap"><img class="item-img" src="https://pub-a6f3892da45a4251bce1aed37a3c516a.r2.dev/double%20tee%20mangue.jpeg" alt="Bubble Tea Mangue" loading="lazy"></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Bubble Tea Mangue</h3><span class="item-price">500 DA</span></div><p class="item-desc">Thé aux perles saveur mangue.</p></div></div>
+        <div class="menu-item-card"><div class="item-media-wrap"><div class="no-media-ph"><i class="fas fa-circle-dot"></i></div></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Bubble Tea Pêche</h3><span class="item-price">500 DA</span></div><p class="item-desc">Thé aux perles saveur pêche.</p></div></div>
+        <div class="menu-item-card"><div class="item-media-wrap"><div class="no-media-ph"><i class="fas fa-circle-dot"></i></div></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Bubble Tea Pomme</h3><span class="item-price">500 DA</span></div><p class="item-desc">Thé aux perles saveur pomme.</p></div></div>
+    </div>
+</section>
+
+<!-- INSTANTS GLACÉES -->
+<section class="menu-section" id="instants-glaces">
+    <div class="sub-title"><span class="sub-title-line"></span><span class="sub-title-text">🍨 Instants Glacées</span><span class="sub-title-line"></span></div>
+    <div class="menu-card-grid">
+        <div class="menu-item-card"><div class="item-media-wrap"><div class="no-media-ph"><i class="fas fa-ice-cream"></i></div></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Coupe soleil</h3><span class="item-price">900 DA</span></div><p class="item-desc">Glace vanille caramel salé et pistaches.</p></div></div>
+        <div class="menu-item-card"><div class="item-media-wrap"><div class="no-media-ph"><i class="fas fa-ice-cream"></i></div></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Délice d'été</h3><span class="item-price">1000 DA</span></div><p class="item-desc">Glace fruits de saison et coulis de fruits.</p></div></div>
+        <div class="menu-item-card"><div class="item-media-wrap"><div class="no-media-ph"><i class="fas fa-ice-cream"></i></div></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Royal chocolat</h3><span class="item-price">1000 DA</span></div><p class="item-desc">Glace chocolat Nutella et noisettes.</p></div></div>
+        <div class="menu-item-card"><div class="item-media-wrap"><div class="no-media-ph"><i class="fas fa-ice-cream"></i></div></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Belle Hélène</h3><span class="item-price">1000 DA</span></div><p class="item-desc">Glace vanille banane et pâte pistache.</p></div></div>
+        <div class="menu-item-card"><div class="item-media-wrap"><div class="no-media-ph"><i class="fas fa-ice-cream"></i></div></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Love Dzira ✦</h3><span class="item-price">1300 DA</span></div><p class="item-desc">Fruits au choix et fruits secs et chantilly.</p></div></div>
+    </div>
+</section>
+
+<!-- MILKSHAKE -->
+<section class="menu-section" id="milkshakes">
+    <div class="sub-title"><span class="sub-title-line"></span><span class="sub-title-text">🥤 Milkshake</span><span class="sub-title-line"></span></div>
+    <div class="menu-card-grid">
+        <div class="menu-item-card"><div class="item-media-wrap"><img class="item-img" src="https://pub-a6f3892da45a4251bce1aed37a3c516a.r2.dev/milkshake%20chocolat.jpeg" alt="Milkshake Chocolat" loading="lazy"></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Milkshake Chocolat</h3><span class="item-price">700 DA</span></div><p class="item-desc">Milkshake onctueux au chocolat.</p></div></div>
+        <div class="menu-item-card"><div class="item-media-wrap"><img class="item-img" src="https://pub-a6f3892da45a4251bce1aed37a3c516a.r2.dev/milkshake%20banane.jpeg" alt="Milkshake Banane" loading="lazy"></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Milkshake Banane</h3><span class="item-price">700 DA</span></div><p class="item-desc">Milkshake onctueux à la banane.</p></div></div>
+        <div class="menu-item-card"><div class="item-media-wrap"><img class="item-img" src="https://pub-a6f3892da45a4251bce1aed37a3c516a.r2.dev/milkshake%20noisette.jpeg" alt="Milkshake Noisette" loading="lazy"></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Milkshake Noisette</h3><span class="item-price">700 DA</span></div><p class="item-desc">Milkshake onctueux à la noisette.</p></div></div>
+        <div class="menu-item-card"><div class="item-media-wrap"><img class="item-img" src="https://pub-a6f3892da45a4251bce1aed37a3c516a.r2.dev/milkshake%20caramel.jpeg" alt="Milkshake Caramel" loading="lazy"></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Milkshake Caramel</h3><span class="item-price">700 DA</span></div><p class="item-desc">Milkshake onctueux au caramel.</p></div></div>
+        <div class="menu-item-card"><div class="item-media-wrap"><img class="item-img" src="https://pub-a6f3892da45a4251bce1aed37a3c516a.r2.dev/milkshake%20chocolat.jpeg" alt="Milkshake Cheesecake" loading="lazy"></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Milkshake Cheesecake</h3><span class="item-price">700 DA</span></div><p class="item-desc">Milkshake onctueux saveur cheesecake.</p></div></div>
+        <div class="menu-item-card"><div class="item-media-wrap"><img class="item-img" src="https://pub-a6f3892da45a4251bce1aed37a3c516a.r2.dev/milkshake%20vanille.jpeg" alt="Milkshake Vanille" loading="lazy"></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Milkshake Vanille</h3><span class="item-price">700 DA</span></div><p class="item-desc">Milkshake onctueux à la vanille.</p></div></div>
+        <div class="menu-item-card"><div class="item-media-wrap"><div class="no-media-ph"><i class="fas fa-blender"></i></div></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Milkshake Pistache fleur de sel</h3><span class="item-price">700 DA</span></div><p class="item-desc">Milkshake pistache et fleur de sel.</p></div></div>
+    </div>
+</section>
+
+<!-- PÂTISSERIES -->
+<section class="menu-section" id="patisseries">
+    <div class="sub-title"><span class="sub-title-line"></span><span class="sub-title-text">🎂 Pâtisseries</span><span class="sub-title-line"></span></div>
+    <div class="menu-card-grid">
+        <div class="menu-item-card"><div class="item-media-wrap"><div class="no-media-ph"><i class="fas fa-birthday-cake"></i></div></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Fondant chocolat</h3><span class="item-price">700 DA</span></div><p class="item-desc">Cœur fondant au chocolat.</p></div></div>
+        <div class="menu-item-card"><div class="item-media-wrap"><div class="no-media-ph"><i class="fas fa-birthday-cake"></i></div></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Tarte Chocolat Banane</h3><span class="item-price">600 DA</span></div><p class="item-desc">Tartelette chocolat et banane.</p></div></div>
+        <div class="menu-item-card"><div class="item-media-wrap"><div class="no-media-ph"><i class="fas fa-birthday-cake"></i></div></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Gâteau au chocolat</h3><span class="item-price">600 DA</span></div><p class="item-desc">Part de gâteau au chocolat maison.</p></div></div>
+        <div class="menu-item-card"><div class="item-media-wrap"><div class="no-media-ph"><i class="fas fa-birthday-cake"></i></div></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Red Velvet</h3><span class="item-price">550 DA</span></div><p class="item-desc">Gâteau Red Velvet classique.</p></div></div>
+        <div class="menu-item-card"><div class="item-media-wrap"><div class="no-media-ph"><i class="fas fa-birthday-cake"></i></div></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Fourrée au caramel</h3><span class="item-price">600 DA</span></div><p class="item-desc">Pâtisserie fourrée au caramel.</p></div></div>
+        <div class="menu-item-card"><div class="item-media-wrap"><div class="no-media-ph"><i class="fas fa-birthday-cake"></i></div></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Saint Sébastien</h3><span class="item-price">650 DA</span></div><p class="item-desc">Cheesecake façon Saint Sébastien.</p></div></div>
+        <div class="menu-item-card"><div class="item-media-wrap"><div class="no-media-ph"><i class="fas fa-birthday-cake"></i></div></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Bourdaloue pomme</h3><span class="item-price">500 DA</span></div><p class="item-desc">Tarte aux pommes Bourdaloue.</p></div></div>
+        <div class="menu-item-card"><div class="item-media-wrap"><div class="no-media-ph"><i class="fas fa-birthday-cake"></i></div></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Crème brûlée</h3><span class="item-price">550 DA</span></div><p class="item-desc">Crème brûlée à la vanille.</p></div></div>
+        <div class="menu-item-card"><div class="item-media-wrap"><div class="no-media-ph"><i class="fas fa-birthday-cake"></i></div></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Tiramisu</h3><span class="item-price">600 DA</span></div><p class="item-desc">Tiramisu aux parfums variés.</p></div></div>
+        <div class="menu-item-card"><div class="item-media-wrap"><div class="no-media-ph"><i class="fas fa-birthday-cake"></i></div></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Cheesecake</h3><span class="item-price">500 DA</span></div><p class="item-desc">Cheesecake onctueux classique.</p></div></div>
+        <div class="menu-item-card"><div class="item-media-wrap"><div class="no-media-ph"><i class="fas fa-birthday-cake"></i></div></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Cheesecake Lotus</h3><span class="item-price">550 DA</span></div><p class="item-desc">Cheesecake au biscuit Lotus Spéculoos.</p></div></div>
+        <div class="menu-item-card"><div class="item-media-wrap"><div class="no-media-ph"><i class="fas fa-birthday-cake"></i></div></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Cheesecake Pistache</h3><span class="item-price">600 DA</span></div><p class="item-desc">Cheesecake à la pistache.</p></div></div>
+        <div class="menu-item-card"><div class="item-media-wrap"><div class="no-media-ph"><i class="fas fa-birthday-cake"></i></div></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Cheesecake Oreo</h3><span class="item-price">600 DA</span></div><p class="item-desc">Cheesecake aux biscuits Oreo.</p></div></div>
+        <div class="menu-item-card"><div class="item-media-wrap"><div class="no-media-ph"><i class="fas fa-birthday-cake"></i></div></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Mousse au chocolat</h3><span class="item-price">500 DA</span></div><p class="item-desc">Mousse au chocolat légère.</p></div></div>
+        <div class="menu-item-card"><div class="item-media-wrap"><div class="no-media-ph"><i class="fas fa-birthday-cake"></i></div></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Nougat glacé</h3><span class="item-price">600 DA</span></div><p class="item-desc">Nougat glacé fait maison.</p></div></div>
+        <div class="menu-item-card"><div class="item-media-wrap"><img class="item-img" src="https://pub-a6f3892da45a4251bce1aed37a3c516a.r2.dev/tarte%20au%20citron.jpeg" alt="Tarte au citron" loading="lazy"></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Tarte au citron</h3><span class="item-price">500 DA</span></div><p class="item-desc">Tartelette au citron meringuée.</p></div></div>
+        <div class="menu-item-card"><div class="item-media-wrap"><div class="no-media-ph"><i class="fas fa-birthday-cake"></i></div></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Flan</h3><span class="item-price">400 DA</span></div><p class="item-desc">Flan pâtissier traditionnel.</p></div></div>
+        <div class="menu-item-card"><div class="item-media-wrap"><div class="no-media-ph"><i class="fas fa-birthday-cake"></i></div></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Trio douceurs orientales</h3><span class="item-price">1000 DA</span></div><p class="item-desc">Assortiment de pâtisseries orientales.</p></div></div>
+        <div class="menu-item-card"><div class="item-media-wrap"><div class="no-media-ph"><i class="fas fa-birthday-cake"></i></div></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Fraisier</h3><span class="item-price">700 DA</span></div><p class="item-desc">Cœur au fraise.</p></div></div>
+        <div class="menu-item-card"><div class="item-media-wrap"><div class="no-media-ph"><i class="fas fa-birthday-cake"></i></div></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Tarte au fraise</h3><span class="item-price">600 DA</span></div></div></div>
+    </div>
+</section>
+
+<!-- VIENNOISERIES -->
+<section class="menu-section" id="viennoiseries">
+    <div class="sub-title"><span class="sub-title-line"></span><span class="sub-title-text">🥐 Viennoiseries</span><span class="sub-title-line"></span></div>
+    <div class="menu-card-grid">
+        <div class="menu-item-card"><div class="item-media-wrap"><div class="no-media-ph"><i class="fas fa-bread-slice"></i></div></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Croissant Parfumé</h3><span class="item-price">200 DA</span></div><p class="item-desc">Viennoiserie parfumée maison.</p></div></div>
+        <div class="menu-item-card"><div class="item-media-wrap"><div class="no-media-ph"><i class="fas fa-bread-slice"></i></div></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Croissant au Beurre</h3><span class="item-price">150 DA</span></div><p class="item-desc">Croissant classique pur beurre.</p></div></div>
+        <div class="menu-item-card"><div class="item-media-wrap"><div class="no-media-ph"><i class="fas fa-bread-slice"></i></div></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Pain au Chocolat</h3><span class="item-price">150 DA</span></div><p class="item-desc">Pain au chocolat pur beurre.</p></div></div>
+        <div class="menu-item-card"><div class="item-media-wrap"><div class="no-media-ph"><i class="fas fa-bread-slice"></i></div></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Trio Makrout</h3><span class="item-price">500 DA</span></div><p class="item-desc">Trois pièces de Makrout traditionnel.</p></div></div>
+        <div class="menu-item-card"><div class="item-media-wrap"><div class="no-media-ph"><i class="fas fa-bread-slice"></i></div></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Kounafa</h3><span class="item-price">500 DA</span></div></div></div>
+    </div>
+</section>
+
+<!-- OPTIONS -->
+<section class="menu-section" id="options">
+    <div class="sub-title"><span class="sub-title-line"></span><span class="sub-title-text">➕ Options & Suppléments</span><span class="sub-title-line"></span></div>
+    <div class="menu-card-grid">
+        <div class="menu-item-card"><div class="item-media-wrap"><div class="no-media-ph"><i class="fas fa-plus-circle"></i></div></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Crème fouettée</h3><span class="item-price">200 DA</span></div><p class="item-desc">Supplément chantilly maison.</p></div></div>
+        <div class="menu-item-card"><div class="item-media-wrap"><div class="no-media-ph"><i class="fas fa-plus-circle"></i></div></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Pistache</h3><span class="item-price">250 DA</span></div><p class="item-desc">Supplément de pistaches concassées.</p></div></div>
+        <div class="menu-item-card"><div class="item-media-wrap"><div class="no-media-ph"><i class="fas fa-plus-circle"></i></div></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Amande grillée</h3><span class="item-price">250 DA</span></div><p class="item-desc">Supplément d'amandes grillées.</p></div></div>
+        <div class="menu-item-card"><div class="item-media-wrap"><div class="no-media-ph"><i class="fas fa-plus-circle"></i></div></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Spéculoos</h3><span class="item-price">250 DA</span></div><p class="item-desc">Supplément de brisures de Spéculoos.</p></div></div>
+        <div class="menu-item-card"><div class="item-media-wrap"><div class="no-media-ph"><i class="fas fa-plus-circle"></i></div></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Pâte à tartiner</h3><span class="item-price">300 DA</span></div><p class="item-desc">Supplément de pâte à tartiner.</p></div></div>
+        <div class="menu-item-card"><div class="item-media-wrap"><div class="no-media-ph"><i class="fas fa-plus-circle"></i></div></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Lait végétal</h3><span class="item-price">400 DA</span></div><p class="item-desc">Option pour remplacer le lait par du lait végétal.</p></div></div>
+        <div class="menu-item-card"><div class="item-media-wrap"><div class="no-media-ph"><i class="fas fa-plus-circle"></i></div></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">1 Fruit</h3><span class="item-price">200 DA</span></div><p class="item-desc">Portion de fruit supplémentaire.</p></div></div>
+        <div class="menu-item-card"><div class="item-media-wrap"><div class="no-media-ph"><i class="fas fa-plus-circle"></i></div></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Miel ou Sirop d'érable</h3><span class="item-price">400 DA</span></div><p class="item-desc">Supplément miel ou sirop d'érable.</p></div></div>
+        <div class="menu-item-card"><div class="item-media-wrap"><div class="no-media-ph"><i class="fas fa-plus-circle"></i></div></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Supplément chocolat</h3><span class="item-price">500 DA</span></div><p class="item-desc">Type Bueno, Mars ou KitKat.</p></div></div>
+    </div>
+</section>
+
+</main>
+
+<footer>
+    <div class="footer-inner">
+        <div class="footer-col"><h4>Bab Dzira</h4><p>Café · Pâtisserie · Cocktails</p></div>
+        <div class="footer-col"><h4>Horaires</h4><p>Tous les jours : 09:00 AM – 01:00 AM</p></div>
+        <div class="footer-col">
+            <h4>Suivez-nous</h4>
+            <p style="display:flex;gap:.8rem;flex-wrap:wrap;">
+                <a href="https://www.instagram.com/babdzira_coffee" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+                <a href="https://web.facebook.com/babdziracoffee/" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.tiktok.com/@babdzira_coffee_icecream" target="_blank" rel="noopener"><i class="fab fa-tiktok"></i></a>
+                <a href="https://www.youtube.com/@babdziracoffeerestaurants" target="_blank" rel="noopener"><i class="fab fa-youtube"></i></a>
+            </p>
+            <p style="margin-top:.5rem;"><a href="mailto:babdziracoffealger@gmail.com"><i class="fas fa-envelope"></i> babdziracoffealger@gmail.com</a></p>
+        </div>
+    </div>
+    <div class="footer-bottom">✦ &copy; 2026 Bab Dzira · Alger Centre ✦</div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
