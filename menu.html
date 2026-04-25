@@ -8,14 +8,41 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <!--
-        model-viewer loaded as ES module — required for the custom element to work.
-        The GLB is NOT set in src on page load. src is set only when the user
-        clicks the poster overlay (via loadModel()). This prevents auto-loading
-        dozens of heavy 3D files on page open.
-    -->
     <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /*
+         * The AR button lives INSIDE model-viewer via slot="ar-button".
+         * model-viewer only shows it when the device supports AR.
+         * We style it to match our gold theme.
+         */
+        .ar-btn {
+            position: absolute;
+            bottom: 12px;
+            right: 12px;
+            display: inline-flex;
+            align-items: center;
+            gap: .45rem;
+            background: rgba(11,37,53,0.92);
+            color: #C9A84C;
+            border: 1px solid rgba(201,168,76,0.55);
+            border-radius: 40px;
+            padding: .5rem 1.1rem;
+            font-family: 'Raleway', sans-serif;
+            font-size: .62rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            cursor: pointer;
+            backdrop-filter: blur(8px);
+            transition: all .3s;
+            white-space: nowrap;
+        }
+        .ar-btn:hover {
+            background: rgba(201,168,76,0.2);
+            border-color: #C9A84C;
+            color: #E8C97A;
+        }
+    </style>
 </head>
 <body>
 
@@ -79,36 +106,8 @@
 
 <main>
 
-<!--
-=================================================================
-  3D CARD TEMPLATE EXPLAINED:
-  <div class="item-media-wrap">
-    <model-viewer
-        data-src="URL.glb"   ← NO src yet — set on click
-        camera-controls
-        auto-rotate
-        ar
-        ar-modes="webxr scene-viewer quick-look"
-        shadow-intensity="1"
-        style="width:100%;height:100%;display:block;">
-      <!-- AR button slot — appears only when AR is available -->
-      <button slot="ar-button" class="ar-btn">
-        voir a table 🍽
-      </button>
-    </model-viewer>
-    <!-- Poster covers model-viewer until click -->
-    <div class="model-poster" onclick="loadModel(this)">
-      <i class="fas fa-cube poster-icon"></i>
-      <button class="voir-dessert-btn">
-        <i class="fas fa-eye"></i> Voir mon dessert
-      </button>
-    </div>
-  </div>
-=================================================================
--->
-
 <!-- ══════════════════════════════════════
-     CRÊPES — 3D
+     CRÊPES — 3D (auto-load, AR via slot)
 ══════════════════════════════════════ -->
 <section class="menu-section" id="crepes">
     <div class="sub-title"><span class="sub-title-line"></span><span class="sub-title-text">🥞 Crêpes — Visualisation 3D</span><span class="sub-title-line"></span></div>
@@ -116,70 +115,65 @@
 
         <div class="menu-item-card">
             <div class="item-media-wrap">
-                <model-viewer data-src="https://pub-235bb593f2704dea88a5c6c4fda2c910.r2.dev/crepe%20chocolat%20dz.glb" camera-controls auto-rotate ar ar-modes="webxr scene-viewer quick-look" shadow-intensity="1" style="width:100%;height:100%;display:block;">
-                    <button slot="ar-button" class="ar-btn">voir a table 🍽</button>
+                <model-viewer src="https://pub-235bb593f2704dea88a5c6c4fda2c910.r2.dev/crepe%20chocolat%20dz.glb"
+                    alt="Crêpe Chocolat" camera-controls auto-rotate
+                    ar ar-modes="webxr scene-viewer quick-look"
+                    shadow-intensity="1" style="width:100%;height:100%;display:block;">
+                    <button slot="ar-button" class="ar-btn">🍽 voir mon dessert</button>
                 </model-viewer>
-                <div class="model-poster" onclick="loadModel(this)">
-                    <i class="fas fa-cube poster-icon"></i>
-                    <button class="voir-dessert-btn"><i class="fas fa-eye"></i> Voir mon dessert</button>
-                </div>
             </div>
             <div class="item-info"><div class="item-header-row"><h3 class="item-name">Crêpe Chocolat</h3><span class="item-price">600 DA</span></div><p class="item-desc">Crêpe au chocolat fondu.</p></div>
         </div>
 
         <div class="menu-item-card">
             <div class="item-media-wrap">
-                <model-viewer data-src="https://pub-235bb593f2704dea88a5c6c4fda2c910.r2.dev/crepe%20bueno%20dz.glb" camera-controls auto-rotate ar ar-modes="webxr scene-viewer quick-look" shadow-intensity="1" style="width:100%;height:100%;display:block;">
-                    <button slot="ar-button" class="ar-btn">voir a table 🍽</button>
+                <model-viewer src="https://pub-235bb593f2704dea88a5c6c4fda2c910.r2.dev/crepe%20bueno%20dz.glb"
+                    alt="Crêpe Bueno" camera-controls auto-rotate
+                    ar ar-modes="webxr scene-viewer quick-look"
+                    shadow-intensity="1" style="width:100%;height:100%;display:block;">
+                    <button slot="ar-button" class="ar-btn">🍽 voir mon dessert</button>
                 </model-viewer>
-                <div class="model-poster" onclick="loadModel(this)">
-                    <i class="fas fa-cube poster-icon"></i>
-                    <button class="voir-dessert-btn"><i class="fas fa-eye"></i> Voir mon dessert</button>
-                </div>
             </div>
             <div class="item-info"><div class="item-header-row"><h3 class="item-name">Crêpe Bueno</h3><span class="item-price">600 DA</span></div><p class="item-desc">Crêpe fourrée au chocolat Bueno.</p></div>
         </div>
 
         <div class="menu-item-card">
             <div class="item-media-wrap">
-                <model-viewer data-src="https://pub-235bb593f2704dea88a5c6c4fda2c910.r2.dev/crepe%20pistache%20dz.glb" camera-controls auto-rotate ar ar-modes="webxr scene-viewer quick-look" shadow-intensity="1" style="width:100%;height:100%;display:block;">
-                    <button slot="ar-button" class="ar-btn">voir a table 🍽</button>
+                <model-viewer src="https://pub-235bb593f2704dea88a5c6c4fda2c910.r2.dev/crepe%20pistache%20dz.glb"
+                    alt="Crêpe Pistache" camera-controls auto-rotate
+                    ar ar-modes="webxr scene-viewer quick-look"
+                    shadow-intensity="1" style="width:100%;height:100%;display:block;">
+                    <button slot="ar-button" class="ar-btn">🍽 voir mon dessert</button>
                 </model-viewer>
-                <div class="model-poster" onclick="loadModel(this)">
-                    <i class="fas fa-cube poster-icon"></i>
-                    <button class="voir-dessert-btn"><i class="fas fa-eye"></i> Voir mon dessert</button>
-                </div>
             </div>
             <div class="item-info"><div class="item-header-row"><h3 class="item-name">Crêpe Pistache</h3><span class="item-price">600 DA</span></div><p class="item-desc">Crêpe à la crème de pistache.</p></div>
         </div>
 
         <div class="menu-item-card">
             <div class="item-media-wrap">
-                <model-viewer data-src="https://pub-235bb593f2704dea88a5c6c4fda2c910.r2.dev/crepe%20caramel.glb" camera-controls auto-rotate ar ar-modes="webxr scene-viewer quick-look" shadow-intensity="1" style="width:100%;height:100%;display:block;">
-                    <button slot="ar-button" class="ar-btn">voir a table 🍽</button>
+                <model-viewer src="https://pub-235bb593f2704dea88a5c6c4fda2c910.r2.dev/crepe%20caramel.glb"
+                    alt="Crêpe Caramel" camera-controls auto-rotate
+                    ar ar-modes="webxr scene-viewer quick-look"
+                    shadow-intensity="1" style="width:100%;height:100%;display:block;">
+                    <button slot="ar-button" class="ar-btn">🍽 voir mon dessert</button>
                 </model-viewer>
-                <div class="model-poster" onclick="loadModel(this)">
-                    <i class="fas fa-cube poster-icon"></i>
-                    <button class="voir-dessert-btn"><i class="fas fa-eye"></i> Voir mon dessert</button>
-                </div>
             </div>
             <div class="item-info"><div class="item-header-row"><h3 class="item-name">Crêpe Caramel</h3><span class="item-price">600 DA</span></div><p class="item-desc">Crêpe au caramel onctueux.</p></div>
         </div>
 
         <div class="menu-item-card">
             <div class="item-media-wrap">
-                <model-viewer data-src="https://pub-235bb593f2704dea88a5c6c4fda2c910.r2.dev/crepe%20nature%20dz.glb" camera-controls auto-rotate ar ar-modes="webxr scene-viewer quick-look" shadow-intensity="1" style="width:100%;height:100%;display:block;">
-                    <button slot="ar-button" class="ar-btn">voir a table 🍽</button>
+                <model-viewer src="https://pub-235bb593f2704dea88a5c6c4fda2c910.r2.dev/crepe%20nature%20dz.glb"
+                    alt="Crêpe Nature" camera-controls auto-rotate
+                    ar ar-modes="webxr scene-viewer quick-look"
+                    shadow-intensity="1" style="width:100%;height:100%;display:block;">
+                    <button slot="ar-button" class="ar-btn">🍽 voir mon dessert</button>
                 </model-viewer>
-                <div class="model-poster" onclick="loadModel(this)">
-                    <i class="fas fa-cube poster-icon"></i>
-                    <button class="voir-dessert-btn"><i class="fas fa-eye"></i> Voir mon dessert</button>
-                </div>
             </div>
             <div class="item-info"><div class="item-header-row"><h3 class="item-name">Crêpe Nature</h3><span class="item-price">600 DA</span></div><p class="item-desc">Crêpe nature classique.</p></div>
         </div>
 
-        <!-- Crêpe Chocolat Banane — no GLB -->
+        <!-- no GLB -->
         <div class="menu-item-card">
             <div class="item-media-wrap"><div class="no-media-ph"><i class="fas fa-stroopwafel"></i><span>Bientôt en 3D</span></div></div>
             <div class="item-info"><div class="item-header-row"><h3 class="item-name">Crêpe Chocolat Banane</h3><span class="item-price">700 DA</span></div><p class="item-desc">Crêpe chocolat et rondelles de banane.</p></div>
@@ -187,52 +181,48 @@
 
         <div class="menu-item-card">
             <div class="item-media-wrap">
-                <model-viewer data-src="https://pub-235bb593f2704dea88a5c6c4fda2c910.r2.dev/crepe%202%20fruits%20dz.glb" camera-controls auto-rotate ar ar-modes="webxr scene-viewer quick-look" shadow-intensity="1" style="width:100%;height:100%;display:block;">
-                    <button slot="ar-button" class="ar-btn">voir a table 🍽</button>
+                <model-viewer src="https://pub-235bb593f2704dea88a5c6c4fda2c910.r2.dev/crepe%202%20fruits%20dz.glb"
+                    alt="Crêpe 2 Fruits" camera-controls auto-rotate
+                    ar ar-modes="webxr scene-viewer quick-look"
+                    shadow-intensity="1" style="width:100%;height:100%;display:block;">
+                    <button slot="ar-button" class="ar-btn">🍽 voir mon dessert</button>
                 </model-viewer>
-                <div class="model-poster" onclick="loadModel(this)">
-                    <i class="fas fa-cube poster-icon"></i>
-                    <button class="voir-dessert-btn"><i class="fas fa-eye"></i> Voir mon dessert</button>
-                </div>
             </div>
             <div class="item-info"><div class="item-header-row"><h3 class="item-name">Crêpe Chocolat 2 Fruits</h3><span class="item-price">800 DA</span></div><p class="item-desc">Crêpe chocolat et deux fruits au choix.</p></div>
         </div>
 
         <div class="menu-item-card">
             <div class="item-media-wrap">
-                <model-viewer data-src="https://pub-235bb593f2704dea88a5c6c4fda2c910.r2.dev/crepe%203%20fruits%20dz.glb" camera-controls auto-rotate ar ar-modes="webxr scene-viewer quick-look" shadow-intensity="1" style="width:100%;height:100%;display:block;">
-                    <button slot="ar-button" class="ar-btn">voir a table 🍽</button>
+                <model-viewer src="https://pub-235bb593f2704dea88a5c6c4fda2c910.r2.dev/crepe%203%20fruits%20dz.glb"
+                    alt="Crêpe 3 Fruits" camera-controls auto-rotate
+                    ar ar-modes="webxr scene-viewer quick-look"
+                    shadow-intensity="1" style="width:100%;height:100%;display:block;">
+                    <button slot="ar-button" class="ar-btn">🍽 voir mon dessert</button>
                 </model-viewer>
-                <div class="model-poster" onclick="loadModel(this)">
-                    <i class="fas fa-cube poster-icon"></i>
-                    <button class="voir-dessert-btn"><i class="fas fa-eye"></i> Voir mon dessert</button>
-                </div>
             </div>
             <div class="item-info"><div class="item-header-row"><h3 class="item-name">Crêpe Chocolat 3 Fruits</h3><span class="item-price">900 DA</span></div><p class="item-desc">Crêpe chocolat et trois fruits au choix.</p></div>
         </div>
 
         <div class="menu-item-card">
             <div class="item-media-wrap">
-                <model-viewer data-src="https://pub-235bb593f2704dea88a5c6c4fda2c910.r2.dev/crepe%20nutella%20croustillante.glb" camera-controls auto-rotate ar ar-modes="webxr scene-viewer quick-look" shadow-intensity="1" style="width:100%;height:100%;display:block;">
-                    <button slot="ar-button" class="ar-btn">voir a table 🍽</button>
+                <model-viewer src="https://pub-235bb593f2704dea88a5c6c4fda2c910.r2.dev/crepe%20nutella%20croustillante.glb"
+                    alt="Crêpe Nutella Croustillante" camera-controls auto-rotate
+                    ar ar-modes="webxr scene-viewer quick-look"
+                    shadow-intensity="1" style="width:100%;height:100%;display:block;">
+                    <button slot="ar-button" class="ar-btn">🍽 voir mon dessert</button>
                 </model-viewer>
-                <div class="model-poster" onclick="loadModel(this)">
-                    <i class="fas fa-cube poster-icon"></i>
-                    <button class="voir-dessert-btn"><i class="fas fa-eye"></i> Voir mon dessert</button>
-                </div>
             </div>
             <div class="item-info"><div class="item-header-row"><h3 class="item-name">Crêpe Nutella Croustillante</h3><span class="item-price">700 DA</span></div><p class="item-desc">Crêpe au Nutella et éclats croustillants.</p></div>
         </div>
 
         <div class="menu-item-card">
             <div class="item-media-wrap">
-                <model-viewer data-src="https://pub-235bb593f2704dea88a5c6c4fda2c910.r2.dev/crepe%20dzira.glb" camera-controls auto-rotate ar ar-modes="webxr scene-viewer quick-look" shadow-intensity="1" style="width:100%;height:100%;display:block;">
-                    <button slot="ar-button" class="ar-btn">voir a table 🍽</button>
+                <model-viewer src="https://pub-235bb593f2704dea88a5c6c4fda2c910.r2.dev/crepe%20dzira.glb"
+                    alt="Crêpe Dzira" camera-controls auto-rotate
+                    ar ar-modes="webxr scene-viewer quick-look"
+                    shadow-intensity="1" style="width:100%;height:100%;display:block;">
+                    <button slot="ar-button" class="ar-btn">🍽 voir mon dessert</button>
                 </model-viewer>
-                <div class="model-poster" onclick="loadModel(this)">
-                    <i class="fas fa-cube poster-icon"></i>
-                    <button class="voir-dessert-btn"><i class="fas fa-eye"></i> Voir mon dessert</button>
-                </div>
             </div>
             <div class="item-info"><div class="item-header-row"><h3 class="item-name">Crêpe Dzira ✦</h3><span class="item-price">1200 DA</span></div><p class="item-desc">Nutella et fruits et glace et fruits secs.</p></div>
         </div>
@@ -247,61 +237,19 @@
     <div class="sub-title"><span class="sub-title-line"></span><span class="sub-title-text">🧇 Gaufres — Visualisation 3D</span><span class="sub-title-line"></span></div>
     <div class="menu-card-grid">
 
-        <div class="menu-item-card">
-            <div class="item-media-wrap">
-                <model-viewer data-src="https://pub-235bb593f2704dea88a5c6c4fda2c910.r2.dev/gaufre%20chocolat%20dz.glb" camera-controls auto-rotate ar ar-modes="webxr scene-viewer quick-look" shadow-intensity="1" style="width:100%;height:100%;display:block;"><button slot="ar-button" class="ar-btn">voir a table 🍽</button></model-viewer>
-                <div class="model-poster" onclick="loadModel(this)"><i class="fas fa-cube poster-icon"></i><button class="voir-dessert-btn"><i class="fas fa-eye"></i> Voir mon dessert</button></div>
-            </div>
-            <div class="item-info"><div class="item-header-row"><h3 class="item-name">Gaufre Chocolat</h3><span class="item-price">700 DA</span></div><p class="item-desc">Gaufre croustillante au chocolat.</p></div>
-        </div>
+        <div class="menu-item-card"><div class="item-media-wrap"><model-viewer src="https://pub-235bb593f2704dea88a5c6c4fda2c910.r2.dev/gaufre%20chocolat%20dz.glb" alt="Gaufre Chocolat" camera-controls auto-rotate ar ar-modes="webxr scene-viewer quick-look" shadow-intensity="1" style="width:100%;height:100%;display:block;"><button slot="ar-button" class="ar-btn">🍽 voir mon dessert</button></model-viewer></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Gaufre Chocolat</h3><span class="item-price">700 DA</span></div><p class="item-desc">Gaufre croustillante au chocolat.</p></div></div>
 
-        <div class="menu-item-card">
-            <div class="item-media-wrap">
-                <model-viewer data-src="https://pub-235bb593f2704dea88a5c6c4fda2c910.r2.dev/gaufre%20bueno.glb" camera-controls auto-rotate ar ar-modes="webxr scene-viewer quick-look" shadow-intensity="1" style="width:100%;height:100%;display:block;"><button slot="ar-button" class="ar-btn">voir a table 🍽</button></model-viewer>
-                <div class="model-poster" onclick="loadModel(this)"><i class="fas fa-cube poster-icon"></i><button class="voir-dessert-btn"><i class="fas fa-eye"></i> Voir mon dessert</button></div>
-            </div>
-            <div class="item-info"><div class="item-header-row"><h3 class="item-name">Gaufre Bueno</h3><span class="item-price">700 DA</span></div><p class="item-desc">Gaufre croustillante au Bueno.</p></div>
-        </div>
+        <div class="menu-item-card"><div class="item-media-wrap"><model-viewer src="https://pub-235bb593f2704dea88a5c6c4fda2c910.r2.dev/gaufre%20bueno.glb" alt="Gaufre Bueno" camera-controls auto-rotate ar ar-modes="webxr scene-viewer quick-look" shadow-intensity="1" style="width:100%;height:100%;display:block;"><button slot="ar-button" class="ar-btn">🍽 voir mon dessert</button></model-viewer></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Gaufre Bueno</h3><span class="item-price">700 DA</span></div><p class="item-desc">Gaufre croustillante au Bueno.</p></div></div>
 
-        <div class="menu-item-card">
-            <div class="item-media-wrap">
-                <model-viewer data-src="https://pub-235bb593f2704dea88a5c6c4fda2c910.r2.dev/gaufre%20pistache.glb" camera-controls auto-rotate ar ar-modes="webxr scene-viewer quick-look" shadow-intensity="1" style="width:100%;height:100%;display:block;"><button slot="ar-button" class="ar-btn">voir a table 🍽</button></model-viewer>
-                <div class="model-poster" onclick="loadModel(this)"><i class="fas fa-cube poster-icon"></i><button class="voir-dessert-btn"><i class="fas fa-eye"></i> Voir mon dessert</button></div>
-            </div>
-            <div class="item-info"><div class="item-header-row"><h3 class="item-name">Gaufre Pistache</h3><span class="item-price">700 DA</span></div><p class="item-desc">Gaufre croustillante à la pistache.</p></div>
-        </div>
+        <div class="menu-item-card"><div class="item-media-wrap"><model-viewer src="https://pub-235bb593f2704dea88a5c6c4fda2c910.r2.dev/gaufre%20pistache.glb" alt="Gaufre Pistache" camera-controls auto-rotate ar ar-modes="webxr scene-viewer quick-look" shadow-intensity="1" style="width:100%;height:100%;display:block;"><button slot="ar-button" class="ar-btn">🍽 voir mon dessert</button></model-viewer></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Gaufre Pistache</h3><span class="item-price">700 DA</span></div><p class="item-desc">Gaufre croustillante à la pistache.</p></div></div>
 
-        <div class="menu-item-card">
-            <div class="item-media-wrap">
-                <model-viewer data-src="https://pub-235bb593f2704dea88a5c6c4fda2c910.r2.dev/gaufre%20caramel.glb" camera-controls auto-rotate ar ar-modes="webxr scene-viewer quick-look" shadow-intensity="1" style="width:100%;height:100%;display:block;"><button slot="ar-button" class="ar-btn">voir a table 🍽</button></model-viewer>
-                <div class="model-poster" onclick="loadModel(this)"><i class="fas fa-cube poster-icon"></i><button class="voir-dessert-btn"><i class="fas fa-eye"></i> Voir mon dessert</button></div>
-            </div>
-            <div class="item-info"><div class="item-header-row"><h3 class="item-name">Gaufre Caramel</h3><span class="item-price">700 DA</span></div><p class="item-desc">Gaufre croustillante au caramel.</p></div>
-        </div>
+        <div class="menu-item-card"><div class="item-media-wrap"><model-viewer src="https://pub-235bb593f2704dea88a5c6c4fda2c910.r2.dev/gaufre%20caramel.glb" alt="Gaufre Caramel" camera-controls auto-rotate ar ar-modes="webxr scene-viewer quick-look" shadow-intensity="1" style="width:100%;height:100%;display:block;"><button slot="ar-button" class="ar-btn">🍽 voir mon dessert</button></model-viewer></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Gaufre Caramel</h3><span class="item-price">700 DA</span></div><p class="item-desc">Gaufre croustillante au caramel.</p></div></div>
 
-        <div class="menu-item-card">
-            <div class="item-media-wrap">
-                <model-viewer data-src="https://pub-235bb593f2704dea88a5c6c4fda2c910.r2.dev/gaufre%20nature%20dz.glb" camera-controls auto-rotate ar ar-modes="webxr scene-viewer quick-look" shadow-intensity="1" style="width:100%;height:100%;display:block;"><button slot="ar-button" class="ar-btn">voir a table 🍽</button></model-viewer>
-                <div class="model-poster" onclick="loadModel(this)"><i class="fas fa-cube poster-icon"></i><button class="voir-dessert-btn"><i class="fas fa-eye"></i> Voir mon dessert</button></div>
-            </div>
-            <div class="item-info"><div class="item-header-row"><h3 class="item-name">Gaufre Nature</h3><span class="item-price">700 DA</span></div><p class="item-desc">Gaufre croustillante nature.</p></div>
-        </div>
+        <div class="menu-item-card"><div class="item-media-wrap"><model-viewer src="https://pub-235bb593f2704dea88a5c6c4fda2c910.r2.dev/gaufre%20nature%20dz.glb" alt="Gaufre Nature" camera-controls auto-rotate ar ar-modes="webxr scene-viewer quick-look" shadow-intensity="1" style="width:100%;height:100%;display:block;"><button slot="ar-button" class="ar-btn">🍽 voir mon dessert</button></model-viewer></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Gaufre Nature</h3><span class="item-price">700 DA</span></div><p class="item-desc">Gaufre croustillante nature.</p></div></div>
 
-        <div class="menu-item-card">
-            <div class="item-media-wrap">
-                <model-viewer data-src="https://pub-235bb593f2704dea88a5c6c4fda2c910.r2.dev/gaufre%20chocolat%20dz.glb" camera-controls auto-rotate ar ar-modes="webxr scene-viewer quick-look" shadow-intensity="1" style="width:100%;height:100%;display:block;"><button slot="ar-button" class="ar-btn">voir a table 🍽</button></model-viewer>
-                <div class="model-poster" onclick="loadModel(this)"><i class="fas fa-cube poster-icon"></i><button class="voir-dessert-btn"><i class="fas fa-eye"></i> Voir mon dessert</button></div>
-            </div>
-            <div class="item-info"><div class="item-header-row"><h3 class="item-name">Gaufre Nutella</h3><span class="item-price">900 DA</span></div><p class="item-desc">Gaufre généreuse au Nutella.</p></div>
-        </div>
+        <div class="menu-item-card"><div class="item-media-wrap"><model-viewer src="https://pub-235bb593f2704dea88a5c6c4fda2c910.r2.dev/gaufre%20chocolat%20dz.glb" alt="Gaufre Nutella" camera-controls auto-rotate ar ar-modes="webxr scene-viewer quick-look" shadow-intensity="1" style="width:100%;height:100%;display:block;"><button slot="ar-button" class="ar-btn">🍽 voir mon dessert</button></model-viewer></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Gaufre Nutella</h3><span class="item-price">900 DA</span></div><p class="item-desc">Gaufre généreuse au Nutella.</p></div></div>
 
-        <div class="menu-item-card">
-            <div class="item-media-wrap">
-                <model-viewer data-src="https://pub-235bb593f2704dea88a5c6c4fda2c910.r2.dev/gaufre%20dzira.glb" camera-controls auto-rotate ar ar-modes="webxr scene-viewer quick-look" shadow-intensity="1" style="width:100%;height:100%;display:block;"><button slot="ar-button" class="ar-btn">voir a table 🍽</button></model-viewer>
-                <div class="model-poster" onclick="loadModel(this)"><i class="fas fa-cube poster-icon"></i><button class="voir-dessert-btn"><i class="fas fa-eye"></i> Voir mon dessert</button></div>
-            </div>
-            <div class="item-info"><div class="item-header-row"><h3 class="item-name">Gaufre Dzira ✦</h3><span class="item-price">1200 DA</span></div><p class="item-desc">Nutella et fruits et glace et fruits secs.</p></div>
-        </div>
+        <div class="menu-item-card"><div class="item-media-wrap"><model-viewer src="https://pub-235bb593f2704dea88a5c6c4fda2c910.r2.dev/gaufre%20dzira.glb" alt="Gaufre Dzira" camera-controls auto-rotate ar ar-modes="webxr scene-viewer quick-look" shadow-intensity="1" style="width:100%;height:100%;display:block;"><button slot="ar-button" class="ar-btn">🍽 voir mon dessert</button></model-viewer></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Gaufre Dzira ✦</h3><span class="item-price">1200 DA</span></div><p class="item-desc">Nutella et fruits et glace et fruits secs.</p></div></div>
 
     </div>
 </section>
@@ -313,121 +261,52 @@
     <div class="sub-title"><span class="sub-title-line"></span><span class="sub-title-text">🥞 Pancakes — Visualisation 3D</span><span class="sub-title-line"></span></div>
     <div class="menu-card-grid">
 
-        <div class="menu-item-card">
-            <div class="item-media-wrap">
-                <model-viewer data-src="https://pub-235bb593f2704dea88a5c6c4fda2c910.r2.dev/pancake%20chocolat%20dz.glb" camera-controls auto-rotate ar ar-modes="webxr scene-viewer quick-look" shadow-intensity="1" style="width:100%;height:100%;display:block;"><button slot="ar-button" class="ar-btn">voir a table 🍽</button></model-viewer>
-                <div class="model-poster" onclick="loadModel(this)"><i class="fas fa-cube poster-icon"></i><button class="voir-dessert-btn"><i class="fas fa-eye"></i> Voir mon dessert</button></div>
-            </div>
-            <div class="item-info"><div class="item-header-row"><h3 class="item-name">Pancake Chocolat</h3><span class="item-price">600 DA</span></div><p class="item-desc">Pancakes moelleux au chocolat.</p></div>
-        </div>
+        <div class="menu-item-card"><div class="item-media-wrap"><model-viewer src="https://pub-235bb593f2704dea88a5c6c4fda2c910.r2.dev/pancake%20chocolat%20dz.glb" alt="Pancake Chocolat" camera-controls auto-rotate ar ar-modes="webxr scene-viewer quick-look" shadow-intensity="1" style="width:100%;height:100%;display:block;"><button slot="ar-button" class="ar-btn">🍽 voir mon dessert</button></model-viewer></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Pancake Chocolat</h3><span class="item-price">600 DA</span></div><p class="item-desc">Pancakes moelleux au chocolat.</p></div></div>
 
-        <div class="menu-item-card">
-            <div class="item-media-wrap">
-                <model-viewer data-src="https://pub-235bb593f2704dea88a5c6c4fda2c910.r2.dev/pancake%20bueno.glb" camera-controls auto-rotate ar ar-modes="webxr scene-viewer quick-look" shadow-intensity="1" style="width:100%;height:100%;display:block;"><button slot="ar-button" class="ar-btn">voir a table 🍽</button></model-viewer>
-                <div class="model-poster" onclick="loadModel(this)"><i class="fas fa-cube poster-icon"></i><button class="voir-dessert-btn"><i class="fas fa-eye"></i> Voir mon dessert</button></div>
-            </div>
-            <div class="item-info"><div class="item-header-row"><h3 class="item-name">Pancake Bueno</h3><span class="item-price">600 DA</span></div><p class="item-desc">Pancakes moelleux au Bueno.</p></div>
-        </div>
+        <div class="menu-item-card"><div class="item-media-wrap"><model-viewer src="https://pub-235bb593f2704dea88a5c6c4fda2c910.r2.dev/pancake%20bueno.glb" alt="Pancake Bueno" camera-controls auto-rotate ar ar-modes="webxr scene-viewer quick-look" shadow-intensity="1" style="width:100%;height:100%;display:block;"><button slot="ar-button" class="ar-btn">🍽 voir mon dessert</button></model-viewer></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Pancake Bueno</h3><span class="item-price">600 DA</span></div><p class="item-desc">Pancakes moelleux au Bueno.</p></div></div>
 
-        <div class="menu-item-card">
-            <div class="item-media-wrap">
-                <model-viewer data-src="https://pub-235bb593f2704dea88a5c6c4fda2c910.r2.dev/pancake%20pistache%20dz.glb" camera-controls auto-rotate ar ar-modes="webxr scene-viewer quick-look" shadow-intensity="1" style="width:100%;height:100%;display:block;"><button slot="ar-button" class="ar-btn">voir a table 🍽</button></model-viewer>
-                <div class="model-poster" onclick="loadModel(this)"><i class="fas fa-cube poster-icon"></i><button class="voir-dessert-btn"><i class="fas fa-eye"></i> Voir mon dessert</button></div>
-            </div>
-            <div class="item-info"><div class="item-header-row"><h3 class="item-name">Pancake Pistache</h3><span class="item-price">600 DA</span></div><p class="item-desc">Pancakes moelleux à la pistache.</p></div>
-        </div>
+        <div class="menu-item-card"><div class="item-media-wrap"><model-viewer src="https://pub-235bb593f2704dea88a5c6c4fda2c910.r2.dev/pancake%20pistache%20dz.glb" alt="Pancake Pistache" camera-controls auto-rotate ar ar-modes="webxr scene-viewer quick-look" shadow-intensity="1" style="width:100%;height:100%;display:block;"><button slot="ar-button" class="ar-btn">🍽 voir mon dessert</button></model-viewer></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Pancake Pistache</h3><span class="item-price">600 DA</span></div><p class="item-desc">Pancakes moelleux à la pistache.</p></div></div>
 
-        <div class="menu-item-card">
-            <div class="item-media-wrap">
-                <model-viewer data-src="https://pub-235bb593f2704dea88a5c6c4fda2c910.r2.dev/pancake%20caramel.glb" camera-controls auto-rotate ar ar-modes="webxr scene-viewer quick-look" shadow-intensity="1" style="width:100%;height:100%;display:block;"><button slot="ar-button" class="ar-btn">voir a table 🍽</button></model-viewer>
-                <div class="model-poster" onclick="loadModel(this)"><i class="fas fa-cube poster-icon"></i><button class="voir-dessert-btn"><i class="fas fa-eye"></i> Voir mon dessert</button></div>
-            </div>
-            <div class="item-info"><div class="item-header-row"><h3 class="item-name">Pancake Caramel</h3><span class="item-price">600 DA</span></div><p class="item-desc">Pancakes moelleux au caramel.</p></div>
-        </div>
+        <div class="menu-item-card"><div class="item-media-wrap"><model-viewer src="https://pub-235bb593f2704dea88a5c6c4fda2c910.r2.dev/pancake%20caramel.glb" alt="Pancake Caramel" camera-controls auto-rotate ar ar-modes="webxr scene-viewer quick-look" shadow-intensity="1" style="width:100%;height:100%;display:block;"><button slot="ar-button" class="ar-btn">🍽 voir mon dessert</button></model-viewer></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Pancake Caramel</h3><span class="item-price">600 DA</span></div><p class="item-desc">Pancakes moelleux au caramel.</p></div></div>
 
-        <!-- Pancake Nature — no GLB -->
-        <div class="menu-item-card">
-            <div class="item-media-wrap"><div class="no-media-ph"><i class="fas fa-layer-group"></i><span>Bientôt en 3D</span></div></div>
-            <div class="item-info"><div class="item-header-row"><h3 class="item-name">Pancake Nature</h3><span class="item-price">600 DA</span></div><p class="item-desc">Pancakes nature classiques.</p></div>
-        </div>
+        <!-- no GLB -->
+        <div class="menu-item-card"><div class="item-media-wrap"><div class="no-media-ph"><i class="fas fa-layer-group"></i><span>Bientôt en 3D</span></div></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Pancake Nature</h3><span class="item-price">600 DA</span></div><p class="item-desc">Pancakes nature classiques.</p></div></div>
 
-        <div class="menu-item-card">
-            <div class="item-media-wrap">
-                <model-viewer data-src="https://pub-235bb593f2704dea88a5c6c4fda2c910.r2.dev/pancake%20banane%20dz.glb" camera-controls auto-rotate ar ar-modes="webxr scene-viewer quick-look" shadow-intensity="1" style="width:100%;height:100%;display:block;"><button slot="ar-button" class="ar-btn">voir a table 🍽</button></model-viewer>
-                <div class="model-poster" onclick="loadModel(this)"><i class="fas fa-cube poster-icon"></i><button class="voir-dessert-btn"><i class="fas fa-eye"></i> Voir mon dessert</button></div>
-            </div>
-            <div class="item-info"><div class="item-header-row"><h3 class="item-name">Pancake Chocolat Banane</h3><span class="item-price">700 DA</span></div><p class="item-desc">Pancakes chocolat et banane.</p></div>
-        </div>
+        <div class="menu-item-card"><div class="item-media-wrap"><model-viewer src="https://pub-235bb593f2704dea88a5c6c4fda2c910.r2.dev/pancake%20banane%20dz.glb" alt="Pancake Chocolat Banane" camera-controls auto-rotate ar ar-modes="webxr scene-viewer quick-look" shadow-intensity="1" style="width:100%;height:100%;display:block;"><button slot="ar-button" class="ar-btn">🍽 voir mon dessert</button></model-viewer></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Pancake Chocolat Banane</h3><span class="item-price">700 DA</span></div><p class="item-desc">Pancakes chocolat et banane.</p></div></div>
 
-        <div class="menu-item-card">
-            <div class="item-media-wrap">
-                <model-viewer data-src="https://pub-235bb593f2704dea88a5c6c4fda2c910.r2.dev/pancake%202%20fruits%20dz.glb" camera-controls auto-rotate ar ar-modes="webxr scene-viewer quick-look" shadow-intensity="1" style="width:100%;height:100%;display:block;"><button slot="ar-button" class="ar-btn">voir a table 🍽</button></model-viewer>
-                <div class="model-poster" onclick="loadModel(this)"><i class="fas fa-cube poster-icon"></i><button class="voir-dessert-btn"><i class="fas fa-eye"></i> Voir mon dessert</button></div>
-            </div>
-            <div class="item-info"><div class="item-header-row"><h3 class="item-name">Pancake Chocolat 2 Fruits</h3><span class="item-price">800 DA</span></div><p class="item-desc">Pancakes chocolat et deux fruits.</p></div>
-        </div>
+        <div class="menu-item-card"><div class="item-media-wrap"><model-viewer src="https://pub-235bb593f2704dea88a5c6c4fda2c910.r2.dev/pancake%202%20fruits%20dz.glb" alt="Pancake 2 Fruits" camera-controls auto-rotate ar ar-modes="webxr scene-viewer quick-look" shadow-intensity="1" style="width:100%;height:100%;display:block;"><button slot="ar-button" class="ar-btn">🍽 voir mon dessert</button></model-viewer></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Pancake Chocolat 2 Fruits</h3><span class="item-price">800 DA</span></div><p class="item-desc">Pancakes chocolat et deux fruits.</p></div></div>
 
-        <!-- Pancake 3 Fruits — no GLB -->
-        <div class="menu-item-card">
-            <div class="item-media-wrap"><div class="no-media-ph"><i class="fas fa-layer-group"></i><span>Bientôt en 3D</span></div></div>
-            <div class="item-info"><div class="item-header-row"><h3 class="item-name">Pancake Chocolat 3 Fruits</h3><span class="item-price">900 DA</span></div><p class="item-desc">Pancakes chocolat et trois fruits.</p></div>
-        </div>
+        <!-- no GLB -->
+        <div class="menu-item-card"><div class="item-media-wrap"><div class="no-media-ph"><i class="fas fa-layer-group"></i><span>Bientôt en 3D</span></div></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Pancake Chocolat 3 Fruits</h3><span class="item-price">900 DA</span></div><p class="item-desc">Pancakes chocolat et trois fruits.</p></div></div>
 
-        <div class="menu-item-card">
-            <div class="item-media-wrap">
-                <model-viewer data-src="https://pub-235bb593f2704dea88a5c6c4fda2c910.r2.dev/pancake%20chocolat%20dz.glb" camera-controls auto-rotate ar ar-modes="webxr scene-viewer quick-look" shadow-intensity="1" style="width:100%;height:100%;display:block;"><button slot="ar-button" class="ar-btn">voir a table 🍽</button></model-viewer>
-                <div class="model-poster" onclick="loadModel(this)"><i class="fas fa-cube poster-icon"></i><button class="voir-dessert-btn"><i class="fas fa-eye"></i> Voir mon dessert</button></div>
-            </div>
-            <div class="item-info"><div class="item-header-row"><h3 class="item-name">Pancake Nutella</h3><span class="item-price">700 DA</span></div><p class="item-desc">Pancakes généreux au Nutella.</p></div>
-        </div>
+        <div class="menu-item-card"><div class="item-media-wrap"><model-viewer src="https://pub-235bb593f2704dea88a5c6c4fda2c910.r2.dev/pancake%20chocolat%20dz.glb" alt="Pancake Nutella" camera-controls auto-rotate ar ar-modes="webxr scene-viewer quick-look" shadow-intensity="1" style="width:100%;height:100%;display:block;"><button slot="ar-button" class="ar-btn">🍽 voir mon dessert</button></model-viewer></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Pancake Nutella</h3><span class="item-price">700 DA</span></div><p class="item-desc">Pancakes généreux au Nutella.</p></div></div>
 
-        <!-- Pancake Sirop d'érable — no GLB -->
-        <div class="menu-item-card">
-            <div class="item-media-wrap"><div class="no-media-ph"><i class="fas fa-layer-group"></i><span>Bientôt en 3D</span></div></div>
-            <div class="item-info"><div class="item-header-row"><h3 class="item-name">Pancake Sirop d'érable</h3><span class="item-price">1000 DA</span></div><p class="item-desc">Pancakes au sirop d'érable.</p></div>
-        </div>
+        <!-- no GLB -->
+        <div class="menu-item-card"><div class="item-media-wrap"><div class="no-media-ph"><i class="fas fa-layer-group"></i><span>Bientôt en 3D</span></div></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Pancake Sirop d'érable</h3><span class="item-price">1000 DA</span></div><p class="item-desc">Pancakes au sirop d'érable.</p></div></div>
 
-        <div class="menu-item-card">
-            <div class="item-media-wrap">
-                <model-viewer data-src="https://pub-235bb593f2704dea88a5c6c4fda2c910.r2.dev/pancake%20dzira.glb" camera-controls auto-rotate ar ar-modes="webxr scene-viewer quick-look" shadow-intensity="1" style="width:100%;height:100%;display:block;"><button slot="ar-button" class="ar-btn">voir a table 🍽</button></model-viewer>
-                <div class="model-poster" onclick="loadModel(this)"><i class="fas fa-cube poster-icon"></i><button class="voir-dessert-btn"><i class="fas fa-eye"></i> Voir mon dessert</button></div>
-            </div>
-            <div class="item-info"><div class="item-header-row"><h3 class="item-name">Pancake Dzira ✦</h3><span class="item-price">1200 DA</span></div><p class="item-desc">Nutella et fruits et glace et fruits secs.</p></div>
-        </div>
+        <div class="menu-item-card"><div class="item-media-wrap"><model-viewer src="https://pub-235bb593f2704dea88a5c6c4fda2c910.r2.dev/pancake%20dzira.glb" alt="Pancake Dzira" camera-controls auto-rotate ar ar-modes="webxr scene-viewer quick-look" shadow-intensity="1" style="width:100%;height:100%;display:block;"><button slot="ar-button" class="ar-btn">🍽 voir mon dessert</button></model-viewer></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Pancake Dzira ✦</h3><span class="item-price">1200 DA</span></div><p class="item-desc">Nutella et fruits et glace et fruits secs.</p></div></div>
 
     </div>
 </section>
 
 <!-- ══════════════════════════════════════
-     AUTRES DESSERTS — 3D + placeholders
+     AUTRES DESSERTS
 ══════════════════════════════════════ -->
 <section class="menu-section" id="autres-desserts">
     <div class="sub-title"><span class="sub-title-line"></span><span class="sub-title-text">🍓 Autres Desserts</span><span class="sub-title-line"></span></div>
     <div class="menu-card-grid">
 
-        <div class="menu-item-card">
-            <div class="item-media-wrap">
-                <model-viewer data-src="https://pub-235bb593f2704dea88a5c6c4fda2c910.r2.dev/assiete%20de%20fruits%20dz.glb" camera-controls auto-rotate ar ar-modes="webxr scene-viewer quick-look" shadow-intensity="1" style="width:100%;height:100%;display:block;"><button slot="ar-button" class="ar-btn">voir a table 🍽</button></model-viewer>
-                <div class="model-poster" onclick="loadModel(this)"><i class="fas fa-cube poster-icon"></i><button class="voir-dessert-btn"><i class="fas fa-eye"></i> Voir mon dessert</button></div>
-            </div>
-            <div class="item-info"><div class="item-header-row"><h3 class="item-name">Assiette de fruits</h3><span class="item-price">1400 DA</span></div><p class="item-desc">Fruits de saison.</p></div>
-        </div>
+        <div class="menu-item-card"><div class="item-media-wrap"><model-viewer src="https://pub-235bb593f2704dea88a5c6c4fda2c910.r2.dev/assiete%20de%20fruits%20dz.glb" alt="Assiette de fruits" camera-controls auto-rotate ar ar-modes="webxr scene-viewer quick-look" shadow-intensity="1" style="width:100%;height:100%;display:block;"><button slot="ar-button" class="ar-btn">🍽 voir mon dessert</button></model-viewer></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Assiette de fruits</h3><span class="item-price">1400 DA</span></div><p class="item-desc">Fruits de saison.</p></div></div>
 
-        <div class="menu-item-card">
-            <div class="item-media-wrap"><div class="no-media-ph"><i class="fas fa-heart"></i><span>Photo à venir</span></div></div>
-            <div class="item-info"><div class="item-header-row"><h3 class="item-name">Fraisier</h3><span class="item-price">700 DA</span></div><p class="item-desc">Cœur au fraise.</p></div>
-        </div>
+        <div class="menu-item-card"><div class="item-media-wrap"><div class="no-media-ph"><i class="fas fa-heart"></i><span>Photo à venir</span></div></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Fraisier</h3><span class="item-price">700 DA</span></div><p class="item-desc">Cœur au fraise.</p></div></div>
 
-        <div class="menu-item-card">
-            <div class="item-media-wrap"><div class="no-media-ph"><i class="fas fa-circle-dot"></i><span>Photo à venir</span></div></div>
-            <div class="item-info"><div class="item-header-row"><h3 class="item-name">Tarte au fraise</h3><span class="item-price">600 DA</span></div></div>
-        </div>
+        <div class="menu-item-card"><div class="item-media-wrap"><div class="no-media-ph"><i class="fas fa-circle-dot"></i><span>Photo à venir</span></div></div><div class="item-info"><div class="item-header-row"><h3 class="item-name">Tarte au fraise</h3><span class="item-price">600 DA</span></div></div></div>
 
     </div>
 </section>
 
 <!-- ══════════════════════════════════════
-     BOISSONS CHAUDES — images
+     BOISSONS CHAUDES
 ══════════════════════════════════════ -->
 <section class="menu-section" id="boissons-chaudes">
     <div class="sub-title"><span class="sub-title-line"></span><span class="sub-title-text">☕ Boissons Chaudes</span><span class="sub-title-line"></span></div>
