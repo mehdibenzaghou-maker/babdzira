@@ -184,8 +184,15 @@
         </div>
 
         <div class="menu-item-card">
-            <div class="item-media-wrap"><div class="no-media-ph"><i class="fas fa-stroopwafel"></i><span>Bientôt en 3D</span></div></div>
-            <div class="item-info"><div class="item-header-row"><h3 class="item-name">Crêpe Chocolat Banane</h3><span class="item-price">700 DA</span></div><p class="item-desc">Crêpe chocolat et rondelles de banane.</p></div>
+            <div class="item-media-wrap">
+                <model-viewer src="https://pub-235bb593f2704dea88a5c6c4fda2c910.r2.dev/crepe%20chocolat%20dz.glb"
+                    alt="Crêpe Chocolat Banane" camera-controls auto-rotate
+                    ar ar-modes="webxr scene-viewer quick-look"
+                    shadow-intensity="1" style="width:100%;height:100%;display:block;">
+                    <button slot="ar-button" class="ar-btn">🍽 voir mon dessert</button>
+                </model-viewer>
+            </div>
+            <div class="item-info"><div class="item-header-row"><h3 class="item-name">Crêpe Chocolat Banane</h3><span class="item-price">700 DA</span></div><p class="item-desc">Crêpe nature classique.</p></div>
         </div>
 
         <div class="menu-item-card">
